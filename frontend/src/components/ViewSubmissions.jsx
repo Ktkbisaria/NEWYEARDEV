@@ -70,10 +70,10 @@ function ViewSubmissions() {
         <div className="glass-effect rounded-2xl p-8 md:p-12 max-w-md mx-auto">
           <div className="text-center mb-8">
             <div className="text-6xl mb-4">🔒</div>
-            <h1 className="text-3xl md:text-4xl font-bold mb-2" style={{ color: '#2D3561' }}>
+            <h1 className="text-3xl md:text-4xl font-bold mb-2" style={{ color: '#d4af7a', letterSpacing: '-0.01em' }}>
               Admin Access
             </h1>
-            <p className="text-lg" style={{ color: '#2D3561', opacity: 0.7 }}>
+            <p className="text-lg" style={{ color: '#374151', opacity: 0.75 }}>
               Enter password to view all submissions
             </p>
           </div>
@@ -93,7 +93,7 @@ function ViewSubmissions() {
                 required
               />
               {passwordError && (
-                <p className="text-sm mt-2" style={{ color: '#E8927C' }}>{passwordError}</p>
+                <p className="text-sm mt-2" style={{ color: '#c4a896' }}>{passwordError}</p>
               )}
             </div>
 
@@ -113,7 +113,7 @@ function ViewSubmissions() {
     return (
       <div className="glass-effect rounded-2xl p-8 md:p-12 text-center">
         <div className="text-6xl mb-4">⏳</div>
-        <h2 className="text-3xl font-bold" style={{ color: '#2D3561' }}>Loading submissions...</h2>
+        <h2 className="text-3xl font-bold" style={{ color: '#374151' }}>Loading submissions...</h2>
       </div>
     )
   }
@@ -122,7 +122,7 @@ function ViewSubmissions() {
     return (
       <div className="glass-effect rounded-2xl p-8 md:p-12 text-center">
         <div className="text-6xl mb-4">😢</div>
-        <h2 className="text-3xl font-bold mb-4" style={{ color: '#2D3561' }}>{error}</h2>
+        <h2 className="text-3xl font-bold mb-4" style={{ color: '#374151' }}>{error}</h2>
         <button
           onClick={fetchSubmissions}
           className="button-primary px-8 py-3 rounded-lg text-lg font-semibold"
@@ -137,10 +137,10 @@ function ViewSubmissions() {
     <div className="w-full max-w-6xl">
       <div className="glass-effect rounded-2xl p-8 md:p-12">
         <div className="mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold mb-2" style={{ color: '#2D3561' }}>
+          <h1 className="text-4xl md:text-5xl font-bold mb-2" style={{ color: '#d4af7a', letterSpacing: '-0.01em' }}>
             All New Year Plans
           </h1>
-          <p className="text-lg" style={{ color: '#2D3561', opacity: 0.7 }}>
+          <p className="text-lg" style={{ color: '#374151', opacity: 0.75 }}>
             {submissions.length} {submissions.length === 1 ? 'submission' : 'submissions'} collected
           </p>
         </div>
@@ -148,7 +148,7 @@ function ViewSubmissions() {
         {submissions.length === 0 ? (
           <div className="text-center py-12">
             <div className="text-6xl mb-4">📭</div>
-            <p className="text-xl" style={{ color: '#2D3561', opacity: 0.7 }}>No submissions yet. Be the first one!</p>
+            <p className="text-xl" style={{ color: '#374151', opacity: 0.7 }}>No submissions yet. Be the first one!</p>
           </div>
         ) : (
           <div className="space-y-4 max-h-[70vh] overflow-y-auto pr-2">
@@ -161,20 +161,29 @@ function ViewSubmissions() {
                   <div className="flex-1">
                     <div className="flex items-start justify-between">
                       <div>
-                        <h3 className="text-2xl font-bold mb-2" style={{ color: '#2D3561' }}>
+                        <h3 className="text-2xl font-bold mb-2" style={{ color: '#374151' }}>
                           {submission.name}
                         </h3>
-                        <p className="text-sm" style={{ color: '#2D3561', opacity: 0.6 }}>
+                        <p className="text-sm" style={{ color: '#6b7280' }}>
                           {new Date(submission.created_at).toLocaleString()}
                         </p>
                       </div>
                       <button
                         onClick={() => handleDelete(submission.id)}
-                        className="ml-4 px-4 py-2 rounded-lg hover:opacity-80 transition-all text-sm font-medium"
+                        className="ml-4 px-4 py-2 rounded-lg transition-all text-sm font-medium"
                         style={{ 
-                          background: '#E8927C', 
+                          background: 'linear-gradient(135deg, #c4a896 0%, #b89a87 100%)',
                           color: 'white',
-                          border: '1px solid #E8927C'
+                          border: '1px solid #c4a896',
+                          boxShadow: '0 2px 8px rgba(196, 168, 150, 0.3)'
+                        }}
+                        onMouseEnter={(e) => {
+                          e.target.style.background = 'linear-gradient(135deg, #b89a87 0%, #a88a77 100%)';
+                          e.target.style.transform = 'translateY(-1px)';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.target.style.background = 'linear-gradient(135deg, #c4a896 0%, #b89a87 100%)';
+                          e.target.style.transform = 'translateY(0)';
                         }}
                         title="Delete submission"
                       >
@@ -182,21 +191,21 @@ function ViewSubmissions() {
                       </button>
                     </div>
                   </div>
-                  <div className="text-2xl mt-2 md:mt-0" style={{ color: '#E8B86D' }}>
+                  <div className="text-2xl mt-2 md:mt-0" style={{ color: '#d4af7a' }}>
                     {'⭐'.repeat(submission.rating)}
                   </div>
                 </div>
 
                 <div className="mb-4">
-                  <p className="text-lg leading-relaxed" style={{ color: '#2D3561' }}>
-                    <span className="font-semibold" style={{ color: '#E8B86D' }}>Plan:</span> {submission.plan}
+                  <p className="text-lg leading-relaxed" style={{ color: '#374151' }}>
+                    <span className="font-semibold" style={{ color: '#d4af7a' }}>Plan:</span> {submission.plan}
                   </p>
                 </div>
 
                 {submission.creative_response && (
-                  <div className="pt-4 border-t" style={{ borderColor: '#E8B86D', opacity: 0.3 }}>
-                    <p style={{ color: '#2D3561', opacity: 0.8 }}>
-                      <span className="font-semibold" style={{ color: '#E8B86D' }}>Message:</span> {submission.creative_response}
+                  <div className="pt-4 border-t" style={{ borderColor: 'rgba(212, 175, 122, 0.2)' }}>
+                    <p style={{ color: '#374151', opacity: 0.85 }}>
+                      <span className="font-semibold" style={{ color: '#d4af7a' }}>Message:</span> {submission.creative_response}
                     </p>
                   </div>
                 )}
@@ -218,7 +227,7 @@ function ViewSubmissions() {
               setIsAuthenticated(false)
             }}
             className="button-secondary px-8 py-3 rounded-lg text-lg font-medium"
-            style={{ borderColor: '#E8927C', color: '#E8927C' }}
+            style={{ borderColor: '#c4a896', color: '#c4a896' }}
           >
             Lock
           </button>

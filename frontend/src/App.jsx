@@ -91,11 +91,7 @@ function Navigation() {
     return (
       <Link
         to="/"
-        className="fixed top-4 left-4 z-50 px-6 py-3 font-semibold rounded-lg transition-all shadow-lg"
-        style={{ 
-          background: '#E8927C', 
-          color: 'white'
-        }}
+        className="button-primary fixed top-4 left-4 z-50 px-6 py-3 font-semibold rounded-lg transition-all shadow-lg"
       >
         Back to Form
       </Link>
@@ -105,12 +101,7 @@ function Navigation() {
   return (
       <Link
         to="/view"
-        className="fixed top-4 right-4 z-50 px-6 py-3 font-medium rounded-lg transition-all shadow-lg"
-        style={{ 
-          background: '#FAF8F5', 
-          color: '#2D3561',
-          border: '1px solid #E8B86D'
-        }}
+        className="button-secondary fixed top-4 right-4 z-50 px-6 py-3 font-medium rounded-lg transition-all shadow-lg"
       >
         View All Responses
       </Link>

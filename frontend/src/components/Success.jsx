@@ -33,8 +33,8 @@ function Success({ formData, resetForm }) {
       <div className="animate-fade-in">
       <div className="glass-effect rounded-2xl p-8 md:p-12 text-center">
         <div className="text-6xl mb-4">⏳</div>
-        <h2 className="text-3xl font-bold mb-2" style={{ color: '#2D3561' }}>Submitting...</h2>
-        <p style={{ color: '#2D3561', opacity: 0.7 }}>Please wait</p>
+        <h2 className="text-3xl font-bold mb-2" style={{ color: '#374151' }}>Submitting...</h2>
+        <p style={{ color: '#374151', opacity: 0.7 }}>Please wait</p>
       </div>
       </div>
     )
@@ -45,8 +45,8 @@ function Success({ formData, resetForm }) {
       <div className="animate-fade-in">
         <div className="glass-effect rounded-2xl p-8 md:p-12 text-center">
           <div className="text-6xl mb-4">😢</div>
-          <h2 className="text-3xl font-bold mb-2" style={{ color: '#2D3561' }}>Something went wrong</h2>
-          <p className="text-sm mb-6" style={{ color: '#2D3561', opacity: 0.7 }}>
+          <h2 className="text-3xl font-bold mb-2" style={{ color: '#374151' }}>Something went wrong</h2>
+          <p className="text-sm mb-6" style={{ color: '#374151', opacity: 0.7 }}>
             Check browser console (F12) for details
           </p>
           <button
@@ -64,18 +64,18 @@ function Success({ formData, resetForm }) {
     <div className="animate-fade-in">
       <div className="glass-effect rounded-2xl p-8 md:p-12 text-center">
         <div className="text-7xl mb-6">🎉</div>
-        <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: '#E8B86D' }}>
+        <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: '#d4af7a', letterSpacing: '-0.01em' }}>
           Thank You, {formData.name}!
         </h1>
-        <p className="text-xl mb-8" style={{ color: '#2D3561', opacity: 0.8 }}>
+        <p className="text-xl mb-8" style={{ color: '#374151', opacity: 0.8 }}>
           Your New Year plans have been saved!
         </p>
         
         <div className="card-effect rounded-lg p-6 mb-6 text-left">
-          <p className="mb-2" style={{ color: '#2D3561' }}><span className="font-semibold" style={{ color: '#E8B86D' }}>Plan:</span> {formData.plan}</p>
-          <p className="mb-2" style={{ color: '#2D3561' }}><span className="font-semibold" style={{ color: '#E8B86D' }}>Rating:</span> <span style={{ color: '#E8B86D' }}>{'⭐'.repeat(formData.rating)}</span></p>
+          <p className="mb-2" style={{ color: '#374151' }}><span className="font-semibold" style={{ color: '#d4af7a' }}>Plan:</span> {formData.plan}</p>
+          <p className="mb-2" style={{ color: '#374151' }}><span className="font-semibold" style={{ color: '#d4af7a' }}>Rating:</span> <span style={{ color: '#d4af7a' }}>{'⭐'.repeat(formData.rating)}</span></p>
           {formData.creative_response && (
-            <p style={{ color: '#2D3561' }}><span className="font-semibold" style={{ color: '#E8B86D' }}>Message:</span> {formData.creative_response}</p>
+            <p style={{ color: '#374151' }}><span className="font-semibold" style={{ color: '#d4af7a' }}>Message:</span> {formData.creative_response}</p>
           )}
         </div>
 

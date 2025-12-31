@@ -17,17 +17,17 @@ function Page4({ creative_response, updateFormData, nextPage, prevPage }) {
     <div className="animate-fade-in">
       <div className="glass-effect rounded-2xl p-8 md:p-12">
         <div className="mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold mb-2" style={{ color: '#2D3561' }}>
+          <h1 className="text-4xl md:text-5xl font-bold mb-2" style={{ color: '#d4af7a', letterSpacing: '-0.01em' }}>
             One More Thing
           </h1>
-          <p className="text-lg" style={{ color: '#2D3561', opacity: 0.7 }}>
+          <p className="text-lg" style={{ color: '#374151', opacity: 0.75 }}>
             What's your New Year's wish or message?
           </p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="animate-slide-up">
-            <label className="block text-lg font-medium mb-3" style={{ color: '#2D3561' }}>
+            <label className="block text-lg font-medium mb-3" style={{ color: '#374151' }}>
               Your New Year's wish or message
             </label>
             <textarea
@@ -41,7 +41,7 @@ function Page4({ creative_response, updateFormData, nextPage, prevPage }) {
           </div>
 
           <div className="animate-slide-up">
-            <label className="block text-lg font-medium mb-3" style={{ color: '#2D3561' }}>
+            <label className="block text-lg font-medium mb-3" style={{ color: '#374151' }}>
               Or pick an emoji
             </label>
             <div className="grid grid-cols-6 gap-3">
@@ -52,14 +52,17 @@ function Page4({ creative_response, updateFormData, nextPage, prevPage }) {
                   onClick={() => setSelectedEmoji(emoji)}
                   className={`text-3xl p-4 rounded-lg transition-all border ${
                     selectedEmoji === emoji
-                      ? 'border-[#E8927C]'
-                      : 'border-[#E8B86D]/30 hover:border-[#E8B86D]/50'
+                      ? ''
+                      : 'hover:border-opacity-50'
                   }`}
                   style={selectedEmoji === emoji ? { 
-                    background: '#E8927C', 
-                    boxShadow: '0 2px 8px rgba(232, 146, 124, 0.3)' 
+                    background: 'linear-gradient(135deg, #c4a896 0%, #b89a87 100%)',
+                    borderColor: '#c4a896',
+                    boxShadow: '0 4px 12px rgba(196, 168, 150, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
                   } : { 
-                    background: '#FAF8F5' 
+                    background: '#f8f9fa',
+                    borderColor: 'rgba(212, 175, 122, 0.2)',
+                    boxShadow: '0 2px 4px rgba(30, 41, 59, 0.08)'
                   }}
                 >
                   {emoji}
