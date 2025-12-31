@@ -68,7 +68,7 @@ export default async function handler(req, res) {
     }
   } else if (req.method === 'POST') {
     try {
-      const { name, plan, rating, creative_response } = req.body
+      const { name, plan, message, anthem, manifesting, confession, honest, rating } = req.body
 
       if (!name || !plan || rating === undefined) {
         return res.status(400).json({ error: 'Missing required fields' })
@@ -80,8 +80,12 @@ export default async function handler(req, res) {
           {
             name,
             plan,
+            message: message || '',
+            anthem: anthem || '',
+            manifesting: manifesting || '',
+            confession: confession || '',
+            honest: honest || '',
             rating,
-            creative_response: creative_response || '',
           },
         ])
         .select()

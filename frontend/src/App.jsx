@@ -4,6 +4,10 @@ import Page1 from './components/Page1'
 import Page2 from './components/Page2'
 import Page3 from './components/Page3'
 import Page4 from './components/Page4'
+import Page5 from './components/Page5'
+import Page6 from './components/Page6'
+import Page7 from './components/Page7'
+import Page8 from './components/Page8'
 import Success from './components/Success'
 import ViewSubmissions from './components/ViewSubmissions'
 
@@ -12,8 +16,12 @@ function FormFlow() {
   const [formData, setFormData] = useState({
     name: '',
     plan: '',
-    rating: 0,
-    creative_response: ''
+    message: '',
+    anthem: '',
+    manifesting: '',
+    confession: '',
+    honest: '',
+    rating: 0
   })
 
   const updateFormData = (data) => {
@@ -33,8 +41,12 @@ function FormFlow() {
     setFormData({
       name: '',
       plan: '',
-      rating: 0,
-      creative_response: ''
+      message: '',
+      anthem: '',
+      manifesting: '',
+      confession: '',
+      honest: '',
+      rating: 0
     })
   }
 
@@ -58,7 +70,7 @@ function FormFlow() {
         )}
         {currentPage === 3 && (
           <Page3 
-            rating={formData.rating}
+            message={formData.message}
             updateFormData={updateFormData}
             nextPage={nextPage}
             prevPage={prevPage}
@@ -66,13 +78,45 @@ function FormFlow() {
         )}
         {currentPage === 4 && (
           <Page4 
-            creative_response={formData.creative_response}
+            anthem={formData.anthem}
             updateFormData={updateFormData}
             nextPage={nextPage}
             prevPage={prevPage}
           />
         )}
         {currentPage === 5 && (
+          <Page5 
+            manifesting={formData.manifesting}
+            updateFormData={updateFormData}
+            nextPage={nextPage}
+            prevPage={prevPage}
+          />
+        )}
+        {currentPage === 6 && (
+          <Page6 
+            confession={formData.confession}
+            updateFormData={updateFormData}
+            nextPage={nextPage}
+            prevPage={prevPage}
+          />
+        )}
+        {currentPage === 7 && (
+          <Page7 
+            honest={formData.honest}
+            updateFormData={updateFormData}
+            nextPage={nextPage}
+            prevPage={prevPage}
+          />
+        )}
+        {currentPage === 8 && (
+          <Page8 
+            rating={formData.rating}
+            updateFormData={updateFormData}
+            nextPage={nextPage}
+            prevPage={prevPage}
+          />
+        )}
+        {currentPage === 9 && (
           <Success 
             formData={formData}
             resetForm={resetForm}

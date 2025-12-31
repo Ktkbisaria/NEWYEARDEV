@@ -71,12 +71,24 @@ function Success({ formData, resetForm }) {
           Your New Year plans have been saved
         </p>
         
-        <div className="card-effect p-6 mb-8 text-left">
-          <p className="mb-3 text-base" style={{ color: '#FFFFFF' }}><span className="font-medium" style={{ color: '#aaa' }}>Plan:</span> {formData.plan}</p>
-          <p className="mb-3 text-base" style={{ color: '#FFFFFF' }}><span className="font-medium" style={{ color: '#aaa' }}>Rating:</span> <span style={{ color: '#00c785' }}>{'⭐'.repeat(formData.rating)}</span></p>
-          {formData.creative_response && (
-            <p className="text-base" style={{ color: '#FFFFFF' }}><span className="font-medium" style={{ color: '#aaa' }}>Message:</span> {formData.creative_response}</p>
+        <div className="card-effect p-6 mb-8 text-left space-y-3">
+          <p className="text-base" style={{ color: '#FFFFFF' }}><span className="font-medium" style={{ color: '#aaa' }}>Plan:</span> {formData.plan}</p>
+          {formData.message && (
+            <p className="text-base" style={{ color: '#FFFFFF' }}><span className="font-medium" style={{ color: '#aaa' }}>Message:</span> {formData.message}</p>
           )}
+          {formData.anthem && (
+            <p className="text-base" style={{ color: '#FFFFFF' }}><span className="font-medium" style={{ color: '#aaa' }}>2025 Anthem:</span> {formData.anthem}</p>
+          )}
+          {formData.manifesting && (
+            <p className="text-base" style={{ color: '#FFFFFF' }}><span className="font-medium" style={{ color: '#aaa' }}>Manifesting:</span> {formData.manifesting}</p>
+          )}
+          {formData.confession && (
+            <p className="text-base" style={{ color: '#FFFFFF' }}><span className="font-medium" style={{ color: '#aaa' }}>Confession:</span> {formData.confession}</p>
+          )}
+          {formData.honest && (
+            <p className="text-base" style={{ color: '#FFFFFF' }}><span className="font-medium" style={{ color: '#aaa' }}>If I'm being honest:</span> {formData.honest}</p>
+          )}
+          <p className="text-base" style={{ color: '#FFFFFF' }}><span className="font-medium" style={{ color: '#aaa' }}>Rating:</span> <span style={{ color: '#00c785' }}>{'⭐'.repeat(formData.rating)}</span></p>
         </div>
 
         <button

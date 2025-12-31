@@ -1,61 +1,74 @@
 import { useState } from 'react'
 
-function Page3({ rating, updateFormData, nextPage, prevPage }) {
-  const [selectedRating, setSelectedRating] = useState(rating || 0)
+function Page3({ message, updateFormData, nextPage, prevPage }) {
+  const [response, setResponse] = useState(message || '')
+  const [selectedEmoji, setSelectedEmoji] = useState('')
+
+  const emojis = ['🎊', '🎈', '🎁', '🍾', '🎆', '🎇', '✨', '🌟', '💫', '🎉', '🥳', '🎂']
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    if (selectedRating > 0) {
-      updateFormData({ rating: selectedRating })
-      nextPage()
-    }
+    const finalResponse = selectedEmoji ? `${selectedEmoji} ${response}`.trim() : response.trim()
+    updateFormData({ message: finalResponse || selectedEmoji || '' })
+    nextPage()
   }
-
-  const stars = [1, 2, 3, 4, 5]
 
   return (
     <div className="animate-fade-in">
       <div className="glass-effect p-8 md:p-12">
         <div className="mb-10">
           <h1 className="text-3xl md:text-4xl font-bold mb-3" style={{ color: '#FFFFFF', letterSpacing: '-0.02em' }}>
-            Rate Your Plan
+            New Year's Wish
           </h1>
           <p className="text-base" style={{ color: '#aaa', letterSpacing: '0.01em' }}>
-            How excited are you about your New Year plans?
+            What's your New Year's wish or message?
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-10">
+        <form onSubmit={handleSubmit} className="space-y-8">
           <div className="animate-slide-up">
-            <div className="flex justify-center gap-5 md:gap-7 mb-8">
-              {stars.map((star) => (
+            <label className="block text-base font-medium mb-3" style={{ color: '#FFFFFF', letterSpacing: '-0.01em' }}>
+              Your New Year's wish or message
+            </label>
+            <textarea
+              value={response}
+              onChange={(e) => setResponse(e.target.value)}
+              placeholder="Share a wish, message, or just your vibe..."
+              rows="5"
+              className="input-style w-full px-4 py-3 text-base focus:outline-none resize-none"
+              autoFocus
+            />
+          </div>
+
+          <div className="animate-slide-up">
+            <label className="block text-base font-medium mb-3" style={{ color: '#FFFFFF', letterSpacing: '-0.01em' }}>
+              Or pick an emoji
+            </label>
+            <div className="grid grid-cols-6 gap-2.5">
+              {emojis.map((emoji) => (
                 <button
-                  key={star}
+                  key={emoji}
                   type="button"
-                  onClick={() => setSelectedRating(star)}
-                  className={`text-5xl md:text-6xl transition-all duration-300 transform hover:scale-125 ${
-                    star <= selectedRating
-                      ? 'glow-effect'
-                      : 'opacity-30 hover:opacity-50'
+                  onClick={() => setSelectedEmoji(emoji)}
+                  className={`text-2xl p-3.5 rounded-lg transition-all duration-300 border ${
+                    selectedEmoji === emoji
+                      ? ''
+                      : 'hover:border-opacity-60 hover:scale-110'
                   }`}
-                  style={star <= selectedRating ? { 
-                    color: '#00c785',
-                    filter: 'drop-shadow(0 0 10px rgba(0, 199, 133, 0.5))'
-                  } : { color: '#888' }}
+                  style={selectedEmoji === emoji ? { 
+                    background: 'rgba(0, 199, 133, 0.2)',
+                    borderColor: '#00c785',
+                    boxShadow: '0 0 15px rgba(0, 199, 133, 0.4)'
+                  } : { 
+                    background: 'rgba(26, 26, 26, 0.6)',
+                    borderColor: 'rgba(255, 255, 255, 0.2)',
+                    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)'
+                  }}
                 >
-                  ⭐
+                  {emoji}
                 </button>
               ))}
             </div>
-            {selectedRating > 0 && (
-              <p className="text-center text-lg font-semibold" style={{ color: '#00c785', letterSpacing: '-0.01em', textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)' }}>
-                {selectedRating === 5 && "Amazing"}
-                {selectedRating === 4 && "Great"}
-                {selectedRating === 3 && "Nice"}
-                {selectedRating === 2 && "Okay"}
-                {selectedRating === 1 && "Hmm"}
-              </p>
-            )}
           </div>
 
           <div className="flex gap-3">
@@ -68,8 +81,7 @@ function Page3({ rating, updateFormData, nextPage, prevPage }) {
             </button>
             <button
               type="submit"
-              disabled={selectedRating === 0}
-              className="button-primary flex-1 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:transform-none"
+              className="button-primary flex-1"
             >
               Next
             </button>
@@ -81,4 +93,3 @@ function Page3({ rating, updateFormData, nextPage, prevPage }) {
 }
 
 export default Page3
-

@@ -1,12 +1,12 @@
 import { useState } from 'react'
 
-function Page4({ anthem, updateFormData, nextPage, prevPage }) {
-  const [inputAnthem, setInputAnthem] = useState(anthem || '')
+function Page7({ honest, updateFormData, nextPage, prevPage }) {
+  const [inputHonest, setInputHonest] = useState(honest || '')
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    if (inputAnthem.trim()) {
-      updateFormData({ anthem: inputAnthem.trim() })
+    if (inputHonest.trim()) {
+      updateFormData({ honest: inputHonest.trim() })
       nextPage()
     }
   }
@@ -16,24 +16,24 @@ function Page4({ anthem, updateFormData, nextPage, prevPage }) {
       <div className="glass-effect p-8 md:p-12">
         <div className="mb-10">
           <h1 className="text-3xl md:text-4xl font-bold mb-3" style={{ color: '#FFFFFF', letterSpacing: '-0.02em' }}>
-            Your 2025 Anthem
+            If I'm Being Honest...
           </h1>
           <p className="text-base" style={{ color: '#aaa', letterSpacing: '0.01em' }}>
-            What song is your 2025 anthem?
+            Complete this sentence about yourself/2025
           </p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-8">
           <div className="animate-slide-up">
             <label className="block text-base font-medium mb-3" style={{ color: '#FFFFFF', letterSpacing: '-0.01em' }}>
-              Song name
+              If I'm being honest...
             </label>
-            <input
-              type="text"
-              value={inputAnthem}
-              onChange={(e) => setInputAnthem(e.target.value)}
-              placeholder="Enter song name..."
-              className="input-style w-full px-4 py-3 text-base focus:outline-none"
+            <textarea
+              value={inputHonest}
+              onChange={(e) => setInputHonest(e.target.value)}
+              placeholder="Complete the sentence..."
+              rows="6"
+              className="input-style w-full px-4 py-3 text-base focus:outline-none resize-none"
               required
               autoFocus
             />
@@ -60,4 +60,5 @@ function Page4({ anthem, updateFormData, nextPage, prevPage }) {
   )
 }
 
-export default Page4
+export default Page7
+

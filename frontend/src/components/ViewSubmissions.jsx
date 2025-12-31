@@ -182,19 +182,36 @@ function ViewSubmissions() {
                   </div>
                 </div>
 
-                <div className="mb-5">
+                <div className="mb-5 space-y-3">
                   <p className="text-base leading-relaxed" style={{ color: '#FFFFFF' }}>
                     <span className="font-medium" style={{ color: '#aaa' }}>Plan:</span> {submission.plan}
                   </p>
-                </div>
-
-                {submission.creative_response && (
-                  <div className="pt-4 border-t" style={{ borderColor: 'rgba(255, 255, 255, 0.2)' }}>
+                  {submission.message && (
                     <p className="text-base" style={{ color: '#FFFFFF' }}>
-                      <span className="font-medium" style={{ color: '#aaa' }}>Message:</span> {submission.creative_response}
+                      <span className="font-medium" style={{ color: '#aaa' }}>Message:</span> {submission.message}
                     </p>
-                  </div>
-                )}
+                  )}
+                  {submission.anthem && (
+                    <p className="text-base" style={{ color: '#FFFFFF' }}>
+                      <span className="font-medium" style={{ color: '#aaa' }}>2025 Anthem:</span> {submission.anthem}
+                    </p>
+                  )}
+                  {submission.manifesting && (
+                    <p className="text-base" style={{ color: '#FFFFFF' }}>
+                      <span className="font-medium" style={{ color: '#aaa' }}>Manifesting:</span> {submission.manifesting}
+                    </p>
+                  )}
+                  {submission.confession && (
+                    <p className="text-base" style={{ color: '#FFFFFF' }}>
+                      <span className="font-medium" style={{ color: '#aaa' }}>Confession:</span> {submission.confession}
+                    </p>
+                  )}
+                  {submission.honest && (
+                    <p className="text-base" style={{ color: '#FFFFFF' }}>
+                      <span className="font-medium" style={{ color: '#aaa' }}>If I'm being honest:</span> {submission.honest}
+                    </p>
+                  )}
+                </div>
               </div>
             ))}
           </div>
