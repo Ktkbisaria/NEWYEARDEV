@@ -19,7 +19,7 @@ function Page5({ manifesting, updateFormData, nextPage, prevPage }) {
             Manifesting
           </h1>
           <p className="text-base" style={{ color: '#aaa', letterSpacing: '0.01em' }}>
-            One thing you're manifesting in 2025 (be specific!)
+            One thing you're manifesting in 2026 (be specific!)
           </p>
         </div>
 

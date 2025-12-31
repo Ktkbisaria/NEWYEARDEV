@@ -26,13 +26,13 @@ function Page1({ name, updateFormData, nextPage }) {
         <form onSubmit={handleSubmit} className="space-y-8">
           <div className="animate-slide-up">
             <label className="block text-base font-medium mb-3" style={{ color: '#FFFFFF', letterSpacing: '-0.01em' }}>
-              What's your name?
+              What's your real name?
             </label>
             <input
               type="text"
               value={inputName}
               onChange={(e) => setInputName(e.target.value)}
-              placeholder="Enter your name..."
+              placeholder="Enter your real name..."
               className="input-style w-full px-4 py-3 text-base focus:outline-none"
               required
               autoFocus

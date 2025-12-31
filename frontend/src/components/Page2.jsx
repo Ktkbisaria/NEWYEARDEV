@@ -19,14 +19,14 @@ function Page2({ plan, updateFormData, nextPage, prevPage }) {
             What's Your Plan?
           </h1>
           <p className="text-base" style={{ color: '#aaa', letterSpacing: '0.01em' }}>
-            Share your New Year's Eve plans in detail
+            Share your New Year plans in detail
           </p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-8">
           <div className="animate-slide-up">
             <label className="block text-base font-medium mb-3" style={{ color: '#FFFFFF', letterSpacing: '-0.01em' }}>
-              Share your New Year's Eve plans in detail
+              Share your New Year plans in detail
             </label>
             <textarea
               value={inputPlan}

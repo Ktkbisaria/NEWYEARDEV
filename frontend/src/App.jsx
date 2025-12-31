@@ -7,7 +7,6 @@ import Page4 from './components/Page4'
 import Page5 from './components/Page5'
 import Page6 from './components/Page6'
 import Page7 from './components/Page7'
-import Page8 from './components/Page8'
 import Success from './components/Success'
 import ViewSubmissions from './components/ViewSubmissions'
 
@@ -19,9 +18,8 @@ function FormFlow() {
     message: '',
     anthem: '',
     manifesting: '',
-    confession: '',
-    honest: '',
-    rating: 0
+    avoid: '',
+    honest: ''
   })
 
   const updateFormData = (data) => {
@@ -44,9 +42,8 @@ function FormFlow() {
       message: '',
       anthem: '',
       manifesting: '',
-      confession: '',
-      honest: '',
-      rating: 0
+      avoid: '',
+      honest: ''
     })
   }
 
@@ -94,7 +91,7 @@ function FormFlow() {
         )}
         {currentPage === 6 && (
           <Page6 
-            confession={formData.confession}
+            avoid={formData.avoid}
             updateFormData={updateFormData}
             nextPage={nextPage}
             prevPage={prevPage}
@@ -109,14 +106,6 @@ function FormFlow() {
           />
         )}
         {currentPage === 8 && (
-          <Page8 
-            rating={formData.rating}
-            updateFormData={updateFormData}
-            nextPage={nextPage}
-            prevPage={prevPage}
-          />
-        )}
-        {currentPage === 9 && (
           <Success 
             formData={formData}
             resetForm={resetForm}

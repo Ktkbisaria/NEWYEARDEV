@@ -77,18 +77,17 @@ function Success({ formData, resetForm }) {
             <p className="text-base" style={{ color: '#FFFFFF' }}><span className="font-medium" style={{ color: '#aaa' }}>Message:</span> {formData.message}</p>
           )}
           {formData.anthem && (
-            <p className="text-base" style={{ color: '#FFFFFF' }}><span className="font-medium" style={{ color: '#aaa' }}>2025 Anthem:</span> {formData.anthem}</p>
+            <p className="text-base" style={{ color: '#FFFFFF' }}><span className="font-medium" style={{ color: '#aaa' }}>2026 Anthem:</span> {formData.anthem}</p>
           )}
           {formData.manifesting && (
             <p className="text-base" style={{ color: '#FFFFFF' }}><span className="font-medium" style={{ color: '#aaa' }}>Manifesting:</span> {formData.manifesting}</p>
           )}
-          {formData.confession && (
-            <p className="text-base" style={{ color: '#FFFFFF' }}><span className="font-medium" style={{ color: '#aaa' }}>Confession:</span> {formData.confession}</p>
+          {formData.avoid && (
+            <p className="text-base" style={{ color: '#FFFFFF' }}><span className="font-medium" style={{ color: '#aaa' }}>Avoiding:</span> {formData.avoid}</p>
           )}
           {formData.honest && (
             <p className="text-base" style={{ color: '#FFFFFF' }}><span className="font-medium" style={{ color: '#aaa' }}>If I'm being honest:</span> {formData.honest}</p>
           )}
-          <p className="text-base" style={{ color: '#FFFFFF' }}><span className="font-medium" style={{ color: '#aaa' }}>Rating:</span> <span style={{ color: '#00c785' }}>{'⭐'.repeat(formData.rating)}</span></p>
         </div>
 
         <button

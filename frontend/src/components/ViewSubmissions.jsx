@@ -177,9 +177,6 @@ function ViewSubmissions() {
                       </button>
                     </div>
                   </div>
-                  <div className="text-xl mt-2 md:mt-0" style={{ color: '#00c785' }}>
-                    {'⭐'.repeat(submission.rating)}
-                  </div>
                 </div>
 
                 <div className="mb-5 space-y-3">
@@ -193,7 +190,7 @@ function ViewSubmissions() {
                   )}
                   {submission.anthem && (
                     <p className="text-base" style={{ color: '#FFFFFF' }}>
-                      <span className="font-medium" style={{ color: '#aaa' }}>2025 Anthem:</span> {submission.anthem}
+                      <span className="font-medium" style={{ color: '#aaa' }}>2026 Anthem:</span> {submission.anthem}
                     </p>
                   )}
                   {submission.manifesting && (
@@ -201,9 +198,9 @@ function ViewSubmissions() {
                       <span className="font-medium" style={{ color: '#aaa' }}>Manifesting:</span> {submission.manifesting}
                     </p>
                   )}
-                  {submission.confession && (
+                  {submission.avoid && (
                     <p className="text-base" style={{ color: '#FFFFFF' }}>
-                      <span className="font-medium" style={{ color: '#aaa' }}>Confession:</span> {submission.confession}
+                      <span className="font-medium" style={{ color: '#aaa' }}>Avoiding:</span> {submission.avoid}
                     </p>
                   )}
                   {submission.honest && (

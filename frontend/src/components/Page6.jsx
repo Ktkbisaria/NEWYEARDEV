@@ -1,12 +1,12 @@
 import { useState } from 'react'
 
-function Page6({ confession, updateFormData, nextPage, prevPage }) {
-  const [inputConfession, setInputConfession] = useState(confession || '')
+function Page6({ avoid, updateFormData, nextPage, prevPage }) {
+  const [inputAvoid, setInputAvoid] = useState(avoid || '')
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    if (inputConfession.trim()) {
-      updateFormData({ confession: inputConfession.trim() })
+    if (inputAvoid.trim()) {
+      updateFormData({ avoid: inputAvoid.trim() })
       nextPage()
     }
   }
@@ -16,22 +16,22 @@ function Page6({ confession, updateFormData, nextPage, prevPage }) {
       <div className="glass-effect p-8 md:p-12">
         <div className="mb-10">
           <h1 className="text-3xl md:text-4xl font-bold mb-3" style={{ color: '#FFFFFF', letterSpacing: '-0.02em' }}>
-            Confession Time
+            What to Avoid
           </h1>
           <p className="text-base" style={{ color: '#aaa', letterSpacing: '0.01em' }}>
-            Admit something from 2024 (keep it real)
+            One thing and person to avoid in 2026
           </p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-8">
           <div className="animate-slide-up">
             <label className="block text-base font-medium mb-3" style={{ color: '#FFFFFF', letterSpacing: '-0.01em' }}>
-              What's your confession?
+              What and who are you avoiding?
             </label>
             <textarea
-              value={inputConfession}
-              onChange={(e) => setInputConfession(e.target.value)}
-              placeholder="Keep it real..."
+              value={inputAvoid}
+              onChange={(e) => setInputAvoid(e.target.value)}
+              placeholder="One thing and person to avoid..."
               rows="6"
               className="input-style w-full px-4 py-3 text-base focus:outline-none resize-none"
               required
@@ -61,4 +61,3 @@ function Page6({ confession, updateFormData, nextPage, prevPage }) {
 }
 
 export default Page6
-
