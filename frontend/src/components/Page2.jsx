@@ -15,17 +15,17 @@ function Page2({ plan, updateFormData, nextPage, prevPage }) {
     <div className="animate-fade-in">
       <div className="glass-effect rounded-2xl p-8 md:p-12">
         <div className="mb-10">
-          <h1 className="text-3xl md:text-4xl font-semibold mb-3" style={{ color: '#2d3748', letterSpacing: '-0.02em', fontWeight: 500 }}>
+          <h1 className="text-3xl md:text-4xl font-semibold mb-3" style={{ color: '#4a5568', letterSpacing: '-0.02em', fontWeight: 500 }}>
             What's Your Plan?
           </h1>
-          <p className="text-base" style={{ color: '#a0a0a0', letterSpacing: '0.01em' }}>
+          <p className="text-base" style={{ color: '#4a5568', opacity: 0.7, letterSpacing: '0.01em' }}>
             Tell us in detail what you're doing this New Year
           </p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-8">
           <div className="animate-slide-up">
-            <label className="block text-base font-medium mb-3" style={{ color: '#2d3748', letterSpacing: '-0.01em' }}>
+            <label className="block text-base font-medium mb-3" style={{ color: '#4a5568', letterSpacing: '-0.01em' }}>
               Share your New Year plans in detail
             </label>
             <textarea

@@ -70,10 +70,10 @@ function ViewSubmissions() {
         <div className="glass-effect rounded-2xl p-8 md:p-12 max-w-md mx-auto">
           <div className="text-center mb-10">
             <div className="text-5xl mb-6">🔒</div>
-            <h1 className="text-2xl md:text-3xl font-semibold mb-3" style={{ color: '#2d3748', letterSpacing: '-0.02em', fontWeight: 500 }}>
+            <h1 className="text-2xl md:text-3xl font-semibold mb-3" style={{ color: '#4a5568', letterSpacing: '-0.02em', fontWeight: 500 }}>
               Admin Access
             </h1>
-            <p className="text-base" style={{ color: '#a0a0a0', letterSpacing: '0.01em' }}>
+            <p className="text-base" style={{ color: '#4a5568', opacity: 0.7, letterSpacing: '0.01em' }}>
               Enter password to view all submissions
             </p>
           </div>
@@ -93,7 +93,7 @@ function ViewSubmissions() {
                 required
               />
               {passwordError && (
-                <p className="text-sm mt-2" style={{ color: '#2d3748', opacity: 0.7 }}>{passwordError}</p>
+                <p className="text-sm mt-2" style={{ color: '#4a5568', opacity: 0.8 }}>{passwordError}</p>
               )}
             </div>
 
@@ -113,7 +113,7 @@ function ViewSubmissions() {
     return (
       <div className="glass-effect rounded-2xl p-8 md:p-12 text-center">
         <div className="text-5xl mb-6">⏳</div>
-        <h2 className="text-2xl font-semibold" style={{ color: '#2d3748', letterSpacing: '-0.01em' }}>Loading submissions...</h2>
+        <h2 className="text-2xl font-semibold" style={{ color: '#4a5568', letterSpacing: '-0.01em' }}>Loading submissions...</h2>
       </div>
     )
   }
@@ -122,7 +122,7 @@ function ViewSubmissions() {
     return (
       <div className="glass-effect rounded-2xl p-8 md:p-12 text-center">
         <div className="text-5xl mb-6">😢</div>
-        <h2 className="text-2xl font-semibold mb-6" style={{ color: '#2d3748', letterSpacing: '-0.01em' }}>{error}</h2>
+        <h2 className="text-2xl font-semibold mb-6" style={{ color: '#4a5568', letterSpacing: '-0.01em' }}>{error}</h2>
         <button
           onClick={fetchSubmissions}
           className="button-primary px-8 py-3.5 text-base font-medium"
@@ -137,10 +137,10 @@ function ViewSubmissions() {
     <div className="w-full max-w-6xl">
       <div className="glass-effect rounded-2xl p-8 md:p-12">
         <div className="mb-10">
-          <h1 className="text-3xl md:text-4xl font-semibold mb-3" style={{ color: '#2d3748', letterSpacing: '-0.02em', fontWeight: 500 }}>
+          <h1 className="text-3xl md:text-4xl font-semibold mb-3" style={{ color: '#4a5568', letterSpacing: '-0.02em', fontWeight: 500 }}>
             All New Year Plans
           </h1>
-          <p className="text-base" style={{ color: '#a0a0a0', letterSpacing: '0.01em' }}>
+          <p className="text-base" style={{ color: '#4a5568', opacity: 0.7, letterSpacing: '0.01em' }}>
             {submissions.length} {submissions.length === 1 ? 'submission' : 'submissions'} collected
           </p>
         </div>
@@ -148,7 +148,7 @@ function ViewSubmissions() {
         {submissions.length === 0 ? (
           <div className="text-center py-16">
             <div className="text-5xl mb-6">📭</div>
-            <p className="text-lg" style={{ color: '#a0a0a0' }}>No submissions yet. Be the first one!</p>
+            <p className="text-lg" style={{ color: '#4a5568', opacity: 0.7 }}>No submissions yet. Be the first one!</p>
           </div>
         ) : (
           <div className="space-y-4 max-h-[70vh] overflow-y-auto pr-2">
@@ -161,10 +161,10 @@ function ViewSubmissions() {
                   <div className="flex-1">
                     <div className="flex items-start justify-between">
                       <div>
-                        <h3 className="text-xl font-semibold mb-1.5" style={{ color: '#2d3748', letterSpacing: '-0.01em' }}>
+                        <h3 className="text-xl font-semibold mb-1.5" style={{ color: '#4a5568', letterSpacing: '-0.01em' }}>
                           {submission.name}
                         </h3>
-                        <p className="text-sm" style={{ color: '#a0a0a0', letterSpacing: '0.01em' }}>
+                        <p className="text-sm" style={{ color: '#4a5568', opacity: 0.6, letterSpacing: '0.01em' }}>
                           {new Date(submission.created_at).toLocaleString()}
                         </p>
                       </div>
@@ -177,21 +177,21 @@ function ViewSubmissions() {
                       </button>
                     </div>
                   </div>
-                  <div className="text-xl mt-2 md:mt-0" style={{ color: '#2d3748', opacity: 0.6 }}>
+                  <div className="text-xl mt-2 md:mt-0" style={{ color: '#4a5568', opacity: 0.5 }}>
                     {'⭐'.repeat(submission.rating)}
                   </div>
                 </div>
 
                 <div className="mb-5">
-                  <p className="text-base leading-relaxed" style={{ color: '#2d3748' }}>
-                    <span className="font-medium" style={{ color: '#2d3748', opacity: 0.6 }}>Plan:</span> {submission.plan}
+                  <p className="text-base leading-relaxed" style={{ color: '#4a5568' }}>
+                    <span className="font-medium" style={{ color: '#4a5568', opacity: 0.6 }}>Plan:</span> {submission.plan}
                   </p>
                 </div>
 
                 {submission.creative_response && (
-                  <div className="pt-4 border-t" style={{ borderColor: 'rgba(0, 0, 0, 0.08)' }}>
-                    <p className="text-base" style={{ color: '#2d3748' }}>
-                      <span className="font-medium" style={{ color: '#2d3748', opacity: 0.6 }}>Message:</span> {submission.creative_response}
+                  <div className="pt-4 border-t" style={{ borderColor: 'rgba(0, 0, 0, 0.06)' }}>
+                    <p className="text-base" style={{ color: '#4a5568' }}>
+                      <span className="font-medium" style={{ color: '#4a5568', opacity: 0.6 }}>Message:</span> {submission.creative_response}
                     </p>
                   </div>
                 )}

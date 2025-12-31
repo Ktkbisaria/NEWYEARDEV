@@ -33,8 +33,8 @@ function Success({ formData, resetForm }) {
       <div className="animate-fade-in">
       <div className="glass-effect rounded-2xl p-8 md:p-12 text-center">
         <div className="text-5xl mb-6">⏳</div>
-        <h2 className="text-2xl font-semibold mb-2" style={{ color: '#2d3748', letterSpacing: '-0.01em' }}>Submitting...</h2>
-        <p style={{ color: '#a0a0a0', fontSize: '15px' }}>Please wait</p>
+        <h2 className="text-2xl font-semibold mb-2" style={{ color: '#4a5568', letterSpacing: '-0.01em' }}>Submitting...</h2>
+        <p style={{ color: '#4a5568', opacity: 0.7, fontSize: '15px' }}>Please wait</p>
       </div>
       </div>
     )
@@ -45,8 +45,8 @@ function Success({ formData, resetForm }) {
       <div className="animate-fade-in">
         <div className="glass-effect rounded-2xl p-8 md:p-12 text-center">
           <div className="text-5xl mb-6">😢</div>
-          <h2 className="text-2xl font-semibold mb-2" style={{ color: '#2d3748', letterSpacing: '-0.01em' }}>Something went wrong</h2>
-          <p className="text-sm mb-8" style={{ color: '#a0a0a0' }}>
+          <h2 className="text-2xl font-semibold mb-2" style={{ color: '#4a5568', letterSpacing: '-0.01em' }}>Something went wrong</h2>
+          <p className="text-sm mb-8" style={{ color: '#4a5568', opacity: 0.7 }}>
             Check browser console (F12) for details
           </p>
           <button
@@ -64,18 +64,18 @@ function Success({ formData, resetForm }) {
     <div className="animate-fade-in">
       <div className="glass-effect rounded-2xl p-8 md:p-12 text-center">
         <div className="text-6xl mb-8">🎉</div>
-        <h1 className="text-3xl md:text-4xl font-semibold mb-4" style={{ color: '#2d3748', letterSpacing: '-0.02em', fontWeight: 500 }}>
+        <h1 className="text-3xl md:text-4xl font-semibold mb-4" style={{ color: '#4a5568', letterSpacing: '-0.02em', fontWeight: 500 }}>
           Thank You, {formData.name}!
         </h1>
-        <p className="text-base mb-10" style={{ color: '#a0a0a0', letterSpacing: '0.01em' }}>
+        <p className="text-base mb-10" style={{ color: '#4a5568', opacity: 0.7, letterSpacing: '0.01em' }}>
           Your New Year plans have been saved
         </p>
         
         <div className="card-effect rounded-xl p-6 mb-8 text-left">
-          <p className="mb-3 text-base" style={{ color: '#2d3748' }}><span className="font-medium" style={{ color: '#2d3748', opacity: 0.6 }}>Plan:</span> <span style={{ color: '#2d3748' }}>{formData.plan}</span></p>
-          <p className="mb-3 text-base" style={{ color: '#2d3748' }}><span className="font-medium" style={{ color: '#2d3748', opacity: 0.6 }}>Rating:</span> <span style={{ color: '#2d3748' }}>{'⭐'.repeat(formData.rating)}</span></p>
+          <p className="mb-3 text-base" style={{ color: '#4a5568' }}><span className="font-medium" style={{ color: '#4a5568', opacity: 0.6 }}>Plan:</span> {formData.plan}</p>
+          <p className="mb-3 text-base" style={{ color: '#4a5568' }}><span className="font-medium" style={{ color: '#4a5568', opacity: 0.6 }}>Rating:</span> <span style={{ color: '#4a5568' }}>{'⭐'.repeat(formData.rating)}</span></p>
           {formData.creative_response && (
-            <p className="text-base" style={{ color: '#2d3748' }}><span className="font-medium" style={{ color: '#2d3748', opacity: 0.6 }}>Message:</span> <span style={{ color: '#2d3748' }}>{formData.creative_response}</span></p>
+            <p className="text-base" style={{ color: '#4a5568' }}><span className="font-medium" style={{ color: '#4a5568', opacity: 0.6 }}>Message:</span> {formData.creative_response}</p>
           )}
         </div>
 
