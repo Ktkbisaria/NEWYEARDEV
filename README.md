@@ -43,6 +43,10 @@ newyear/
 
 See [SETUP.md](./SETUP.md) for Supabase table setup and Vercel configuration.
 
+## 🔓 Public Access
+
+If your app requires Vercel login, see [FIX_PUBLIC_ACCESS.md](./FIX_PUBLIC_ACCESS.md) to make it public.
+
 ## 🎯 Tech Stack
 
 - **Frontend**: React, Vite, Tailwind CSS

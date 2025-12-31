@@ -52,13 +52,13 @@ function ViewSubmissions() {
   if (!isAuthenticated) {
     return (
       <div className="animate-fade-in">
-        <div className="glass-effect rounded-3xl p-8 md:p-12 shadow-2xl max-w-md mx-auto">
+        <div className="glass-effect rounded-2xl p-8 md:p-12 shadow-xl max-w-md mx-auto">
           <div className="text-center mb-8">
             <div className="text-6xl mb-4">🔒</div>
             <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">
               Admin Access
             </h1>
-            <p className="text-white/80 text-lg">
+            <p className="text-gray-400 text-lg">
               Enter password to view all submissions
             </p>
           </div>
@@ -73,20 +73,20 @@ function ViewSubmissions() {
                   setPasswordError('')
                 }}
                 placeholder="Enter password..."
-                className="w-full px-6 py-4 rounded-xl bg-white/20 border-2 border-white/30 text-white text-lg placeholder-white/60 focus:outline-none focus:border-yellow-300 focus:ring-4 focus:ring-yellow-300/30 transition-all"
+                className="input-style w-full px-5 py-4 rounded-lg text-lg focus:outline-none transition-all"
                 autoFocus
                 required
               />
               {passwordError && (
-                <p className="text-red-300 text-sm mt-2">{passwordError}</p>
+                <p className="text-red-400 text-sm mt-2">{passwordError}</p>
               )}
             </div>
 
             <button
               type="submit"
-              className="w-full py-4 bg-gradient-to-r from-yellow-400 to-pink-500 text-white text-xl font-bold rounded-xl hover:from-yellow-300 hover:to-pink-400 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-2xl glow-effect"
+              className="button-primary w-full py-4 rounded-lg text-lg font-semibold"
             >
-              Unlock 🔓
+              Unlock
             </button>
           </form>
         </div>
@@ -96,8 +96,8 @@ function ViewSubmissions() {
 
   if (loading) {
     return (
-      <div className="glass-effect rounded-3xl p-8 md:p-12 shadow-2xl text-center">
-        <div className="text-6xl mb-4 animate-bounce-slow">⏳</div>
+      <div className="glass-effect rounded-2xl p-8 md:p-12 shadow-xl text-center">
+        <div className="text-6xl mb-4">⏳</div>
         <h2 className="text-3xl font-bold text-white">Loading submissions...</h2>
       </div>
     )
@@ -105,12 +105,12 @@ function ViewSubmissions() {
 
   if (error) {
     return (
-      <div className="glass-effect rounded-3xl p-8 md:p-12 shadow-2xl text-center">
+      <div className="glass-effect rounded-2xl p-8 md:p-12 shadow-xl text-center">
         <div className="text-6xl mb-4">😢</div>
         <h2 className="text-3xl font-bold text-white mb-4">{error}</h2>
         <button
           onClick={fetchSubmissions}
-          className="px-8 py-3 bg-gradient-to-r from-yellow-400 to-pink-500 text-white text-lg font-bold rounded-xl hover:from-yellow-300 hover:to-pink-400 transform hover:scale-105 transition-all"
+          className="button-primary px-8 py-3 rounded-lg text-lg font-semibold"
         >
           Try Again
         </button>
@@ -120,12 +120,12 @@ function ViewSubmissions() {
 
   return (
     <div className="w-full max-w-6xl">
-      <div className="glass-effect rounded-3xl p-8 md:p-12 shadow-2xl">
-        <div className="text-center mb-8">
+      <div className="glass-effect rounded-2xl p-8 md:p-12 shadow-xl">
+        <div className="mb-8">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-2">
-            All New Year Plans 📋
+            All New Year Plans
           </h1>
-          <p className="text-white/80 text-lg">
+          <p className="text-gray-400 text-lg">
             {submissions.length} {submissions.length === 1 ? 'submission' : 'submissions'} collected
           </p>
         </div>
@@ -133,39 +133,39 @@ function ViewSubmissions() {
         {submissions.length === 0 ? (
           <div className="text-center py-12">
             <div className="text-6xl mb-4">📭</div>
-            <p className="text-white/80 text-xl">No submissions yet. Be the first one!</p>
+            <p className="text-gray-400 text-xl">No submissions yet. Be the first one!</p>
           </div>
         ) : (
-          <div className="space-y-6 max-h-[70vh] overflow-y-auto pr-2">
+          <div className="space-y-4 max-h-[70vh] overflow-y-auto pr-2">
             {submissions.map((submission) => (
               <div
                 key={submission.id}
-                className="bg-white/10 rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all animate-slide-up"
+                className="card-effect rounded-lg p-6 animate-slide-up"
               >
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                   <div>
-                    <h3 className="text-2xl font-bold text-yellow-300 mb-2">
+                    <h3 className="text-2xl font-bold text-white mb-2">
                       {submission.name}
                     </h3>
-                    <p className="text-white/60 text-sm">
-                      Submitted: {new Date(submission.created_at).toLocaleString()}
+                    <p className="text-gray-500 text-sm">
+                      {new Date(submission.created_at).toLocaleString()}
                     </p>
                   </div>
-                  <div className="text-3xl mt-2 md:mt-0">
+                  <div className="text-2xl mt-2 md:mt-0 text-white">
                     {'⭐'.repeat(submission.rating)}
                   </div>
                 </div>
 
                 <div className="mb-4">
-                  <p className="text-white/90 text-lg leading-relaxed">
-                    <span className="font-semibold text-yellow-300">Plan:</span> {submission.plan}
+                  <p className="text-gray-300 text-lg leading-relaxed">
+                    <span className="font-semibold text-white">Plan:</span> {submission.plan}
                   </p>
                 </div>
 
                 {submission.creative_response && (
-                  <div className="pt-4 border-t border-white/20">
-                    <p className="text-white/80">
-                      <span className="font-semibold text-pink-300">Message:</span> {submission.creative_response}
+                  <div className="pt-4 border-t border-[#2a2a2a]">
+                    <p className="text-gray-400">
+                      <span className="font-semibold text-white">Message:</span> {submission.creative_response}
                     </p>
                   </div>
                 )}
@@ -174,21 +174,21 @@ function ViewSubmissions() {
           </div>
         )}
 
-        <div className="mt-8 text-center">
+        <div className="mt-8 flex gap-4 justify-center">
           <button
             onClick={fetchSubmissions}
-            className="px-8 py-3 bg-white/10 text-white text-lg font-semibold rounded-xl hover:bg-white/20 transition-all border border-white/20 mr-4"
+            className="button-secondary px-8 py-3 rounded-lg text-lg font-medium"
           >
-            🔄 Refresh
+            Refresh
           </button>
           <button
             onClick={() => {
               sessionStorage.removeItem('admin_authenticated')
               setIsAuthenticated(false)
             }}
-            className="px-8 py-3 bg-red-500/20 text-white text-lg font-semibold rounded-xl hover:bg-red-500/30 transition-all border border-red-500/30"
+            className="button-secondary px-8 py-3 rounded-lg text-lg font-medium border-red-500/30 hover:bg-red-500/10"
           >
-            🔒 Lock
+            Lock
           </button>
         </div>
       </div>
