@@ -1,16 +1,18 @@
 {
   "name": "newyear-plans-app",
   "version": "1.0.0",
+  "type": "module",
   "description": "New Year Plans Collection App",
   "scripts": {
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "server": "cd backend && npm run dev",
     "client": "cd frontend && npm run dev",
     "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install",
-    "build": "cd frontend && npm run build"
+    "build": "cd frontend && npm run build",
+    "test-supabase": "node test-supabase.js"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.38.5"
+    "@supabase/supabase-js": "^2.89.0"
   },
   "devDependencies": {
     "concurrently": "^8.2.2"
