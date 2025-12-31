@@ -31,11 +31,11 @@ function Success({ formData, resetForm }) {
   if (isSubmitting) {
     return (
       <div className="animate-fade-in">
-        <div className="glass-effect rounded-2xl p-8 md:p-12 text-center">
-          <div className="text-6xl mb-4">⏳</div>
-          <h2 className="text-3xl font-bold text-white mb-2">Submitting...</h2>
-          <p className="text-gray-400">Please wait</p>
-        </div>
+      <div className="glass-effect rounded-2xl p-8 md:p-12 text-center">
+        <div className="text-6xl mb-4">⏳</div>
+        <h2 className="text-3xl font-bold mb-2" style={{ color: '#2D3561' }}>Submitting...</h2>
+        <p style={{ color: '#2D3561', opacity: 0.7 }}>Please wait</p>
+      </div>
       </div>
     )
   }
@@ -45,8 +45,8 @@ function Success({ formData, resetForm }) {
       <div className="animate-fade-in">
         <div className="glass-effect rounded-2xl p-8 md:p-12 text-center">
           <div className="text-6xl mb-4">😢</div>
-          <h2 className="text-3xl font-bold text-white mb-2">Something went wrong</h2>
-          <p className="text-gray-400 text-sm mb-6">
+          <h2 className="text-3xl font-bold mb-2" style={{ color: '#2D3561' }}>Something went wrong</h2>
+          <p className="text-sm mb-6" style={{ color: '#2D3561', opacity: 0.7 }}>
             Check browser console (F12) for details
           </p>
           <button
@@ -64,18 +64,18 @@ function Success({ formData, resetForm }) {
     <div className="animate-fade-in">
       <div className="glass-effect rounded-2xl p-8 md:p-12 text-center">
         <div className="text-7xl mb-6">🎉</div>
-        <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+        <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: '#E8B86D' }}>
           Thank You, {formData.name}!
         </h1>
-        <p className="text-xl text-gray-300 mb-8">
+        <p className="text-xl mb-8" style={{ color: '#2D3561', opacity: 0.8 }}>
           Your New Year plans have been saved!
         </p>
         
         <div className="card-effect rounded-lg p-6 mb-6 text-left">
-          <p className="text-gray-300 mb-2"><span className="font-semibold text-white">Plan:</span> {formData.plan}</p>
-          <p className="text-gray-300 mb-2"><span className="font-semibold text-white">Rating:</span> {'⭐'.repeat(formData.rating)}</p>
+          <p className="mb-2" style={{ color: '#2D3561' }}><span className="font-semibold" style={{ color: '#E8B86D' }}>Plan:</span> {formData.plan}</p>
+          <p className="mb-2" style={{ color: '#2D3561' }}><span className="font-semibold" style={{ color: '#E8B86D' }}>Rating:</span> <span style={{ color: '#E8B86D' }}>{'⭐'.repeat(formData.rating)}</span></p>
           {formData.creative_response && (
-            <p className="text-gray-300"><span className="font-semibold text-white">Message:</span> {formData.creative_response}</p>
+            <p style={{ color: '#2D3561' }}><span className="font-semibold" style={{ color: '#E8B86D' }}>Message:</span> {formData.creative_response}</p>
           )}
         </div>
 

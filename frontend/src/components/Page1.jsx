@@ -15,20 +15,20 @@ function Page1({ name, updateFormData, nextPage }) {
     <div className="animate-fade-in">
       <div className="glass-effect rounded-2xl p-8 md:p-12">
         <div className="text-center mb-10">
-          <h1 className="text-6xl md:text-8xl font-bold text-white mb-6">
+          <h1 className="text-6xl md:text-8xl font-bold mb-6">
             🎉
           </h1>
-          <h2 className="text-5xl md:text-7xl font-bold text-white mb-3">
+          <h2 className="text-5xl md:text-7xl font-bold mb-3" style={{ color: '#E8B86D' }}>
             Happy New Year
           </h2>
-          <h3 className="text-2xl md:text-3xl font-light text-gray-400">
-            from <span className="text-white font-medium">ktk</span>
+          <h3 className="text-2xl md:text-3xl font-light" style={{ color: '#2D3561' }}>
+            from <span className="font-medium" style={{ color: '#E8B86D' }}>ktk</span>
           </h3>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="animate-slide-up">
-            <label className="block text-white text-lg font-medium mb-3">
+            <label className="block text-lg font-medium mb-3" style={{ color: '#2D3561' }}>
               What's your name?
             </label>
             <input

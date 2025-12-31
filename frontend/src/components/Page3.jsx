@@ -17,10 +17,10 @@ function Page3({ rating, updateFormData, nextPage, prevPage }) {
     <div className="animate-fade-in">
       <div className="glass-effect rounded-2xl p-8 md:p-12">
         <div className="mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-2">
+          <h1 className="text-4xl md:text-5xl font-bold mb-2" style={{ color: '#2D3561' }}>
             Rate Your Plan
           </h1>
-          <p className="text-gray-400 text-lg">
+          <p className="text-lg" style={{ color: '#2D3561', opacity: 0.7 }}>
             How excited are you about your New Year plans?
           </p>
         </div>
@@ -35,16 +35,17 @@ function Page3({ rating, updateFormData, nextPage, prevPage }) {
                   onClick={() => setSelectedRating(star)}
                   className={`text-5xl md:text-6xl transition-all transform hover:scale-110 ${
                     star <= selectedRating
-                      ? 'text-white'
-                      : 'text-gray-600 hover:text-gray-400'
+                      ? ''
+                      : 'opacity-30 hover:opacity-50'
                   }`}
+                  style={star <= selectedRating ? { color: '#E8B86D' } : { color: '#2D3561' }}
                 >
                   ⭐
                 </button>
               ))}
             </div>
             {selectedRating > 0 && (
-              <p className="text-center text-white text-xl font-medium">
+              <p className="text-center text-xl font-medium" style={{ color: '#E8B86D' }}>
                 {selectedRating === 5 && "Amazing!"}
                 {selectedRating === 4 && "Great!"}
                 {selectedRating === 3 && "Nice!"}

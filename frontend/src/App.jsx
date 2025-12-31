@@ -91,7 +91,11 @@ function Navigation() {
     return (
       <Link
         to="/"
-        className="fixed top-4 left-4 z-50 px-6 py-3 bg-white text-black font-semibold rounded-lg hover:bg-gray-100 transition-all shadow-lg"
+        className="fixed top-4 left-4 z-50 px-6 py-3 font-semibold rounded-lg transition-all shadow-lg"
+        style={{ 
+          background: '#E8927C', 
+          color: 'white'
+        }}
       >
         Back to Form
       </Link>
@@ -99,12 +103,17 @@ function Navigation() {
   }
 
   return (
-    <Link
-      to="/view"
-      className="fixed top-4 right-4 z-50 px-6 py-3 bg-[#1a1a1a] text-white font-medium rounded-lg hover:bg-[#2a2a2a] transition-all border border-[#2a2a2a] shadow-lg"
-    >
-      View All Responses
-    </Link>
+      <Link
+        to="/view"
+        className="fixed top-4 right-4 z-50 px-6 py-3 font-medium rounded-lg transition-all shadow-lg"
+        style={{ 
+          background: '#FAF8F5', 
+          color: '#2D3561',
+          border: '1px solid #E8B86D'
+        }}
+      >
+        View All Responses
+      </Link>
   )
 }
 

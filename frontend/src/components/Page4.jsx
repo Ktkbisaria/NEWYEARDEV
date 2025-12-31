@@ -17,17 +17,17 @@ function Page4({ creative_response, updateFormData, nextPage, prevPage }) {
     <div className="animate-fade-in">
       <div className="glass-effect rounded-2xl p-8 md:p-12">
         <div className="mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-2">
+          <h1 className="text-4xl md:text-5xl font-bold mb-2" style={{ color: '#2D3561' }}>
             One More Thing
           </h1>
-          <p className="text-gray-400 text-lg">
+          <p className="text-lg" style={{ color: '#2D3561', opacity: 0.7 }}>
             What's your New Year's wish or message?
           </p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="animate-slide-up">
-            <label className="block text-white text-lg font-medium mb-3">
+            <label className="block text-lg font-medium mb-3" style={{ color: '#2D3561' }}>
               Your New Year's wish or message
             </label>
             <textarea
@@ -41,7 +41,7 @@ function Page4({ creative_response, updateFormData, nextPage, prevPage }) {
           </div>
 
           <div className="animate-slide-up">
-            <label className="block text-white text-lg font-medium mb-3">
+            <label className="block text-lg font-medium mb-3" style={{ color: '#2D3561' }}>
               Or pick an emoji
             </label>
             <div className="grid grid-cols-6 gap-3">
@@ -52,9 +52,15 @@ function Page4({ creative_response, updateFormData, nextPage, prevPage }) {
                   onClick={() => setSelectedEmoji(emoji)}
                   className={`text-3xl p-4 rounded-lg transition-all border ${
                     selectedEmoji === emoji
-                      ? 'bg-white text-black border-white'
-                      : 'bg-[#1a1a1a] border-[#2a2a2a] hover:border-[#3a3a3a]'
+                      ? 'border-[#E8927C]'
+                      : 'border-[#E8B86D]/30 hover:border-[#E8B86D]/50'
                   }`}
+                  style={selectedEmoji === emoji ? { 
+                    background: '#E8927C', 
+                    boxShadow: '0 2px 8px rgba(232, 146, 124, 0.3)' 
+                  } : { 
+                    background: '#FAF8F5' 
+                  }}
                 >
                   {emoji}
                 </button>
