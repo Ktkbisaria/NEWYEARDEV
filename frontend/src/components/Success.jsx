@@ -8,11 +8,18 @@ function Success({ formData, resetForm }) {
   useEffect(() => {
     const submitData = async () => {
       try {
-        await axios.post('/api/submissions', formData)
+        const response = await axios.post('/api/submissions', formData)
+        console.log('Submission successful:', response.data)
         setSubmitStatus('success')
         setIsSubmitting(false)
       } catch (error) {
         console.error('Error submitting:', error)
+        console.error('Error details:', {
+          message: error.message,
+          response: error.response?.data,
+          status: error.response?.status,
+          url: error.config?.url
+        })
         setSubmitStatus('error')
         setIsSubmitting(false)
       }
@@ -38,7 +45,13 @@ function Success({ formData, resetForm }) {
       <div className="animate-fade-in">
         <div className="glass-effect rounded-3xl p-8 md:p-12 shadow-2xl text-center">
           <div className="text-6xl mb-4">😢</div>
-          <h2 className="text-3xl font-bold text-white mb-4">Oops! Something went wrong</h2>
+          <h2 className="text-3xl font-bold text-white mb-2">Oops! Something went wrong</h2>
+          <p className="text-white/80 text-sm mb-4">
+            Check browser console (F12) for details
+          </p>
+          <p className="text-yellow-300 text-xs mb-6">
+            Common issues: Environment variables not set in Vercel, or wrong API key
+          </p>
           <button
             onClick={resetForm}
             className="px-8 py-3 bg-gradient-to-r from-yellow-400 to-pink-500 text-white text-lg font-bold rounded-xl hover:from-yellow-300 hover:to-pink-400 transform hover:scale-105 transition-all"
