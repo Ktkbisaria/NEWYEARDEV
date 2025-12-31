@@ -13,7 +13,7 @@ function Page1({ name, updateFormData, nextPage }) {
 
   return (
     <div className="animate-fade-in">
-      <div className="glass-effect rounded-2xl p-8 md:p-12 shadow-xl">
+      <div className="glass-effect rounded-2xl p-8 md:p-12">
         <div className="text-center mb-10">
           <h1 className="text-6xl md:text-8xl font-bold text-white mb-6">
             🎉

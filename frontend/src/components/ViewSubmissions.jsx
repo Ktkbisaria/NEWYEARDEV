@@ -52,7 +52,7 @@ function ViewSubmissions() {
   if (!isAuthenticated) {
     return (
       <div className="animate-fade-in">
-        <div className="glass-effect rounded-2xl p-8 md:p-12 shadow-xl max-w-md mx-auto">
+        <div className="glass-effect rounded-2xl p-8 md:p-12 max-w-md mx-auto">
           <div className="text-center mb-8">
             <div className="text-6xl mb-4">🔒</div>
             <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">
@@ -120,7 +120,7 @@ function ViewSubmissions() {
 
   return (
     <div className="w-full max-w-6xl">
-      <div className="glass-effect rounded-2xl p-8 md:p-12 shadow-xl">
+      <div className="glass-effect rounded-2xl p-8 md:p-12">
         <div className="mb-8">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-2">
             All New Year Plans

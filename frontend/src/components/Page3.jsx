@@ -15,7 +15,7 @@ function Page3({ rating, updateFormData, nextPage, prevPage }) {
 
   return (
     <div className="animate-fade-in">
-      <div className="glass-effect rounded-2xl p-8 md:p-12 shadow-xl">
+      <div className="glass-effect rounded-2xl p-8 md:p-12">
         <div className="mb-8">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-2">
             Rate Your Plan
