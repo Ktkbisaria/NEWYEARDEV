@@ -16,22 +16,22 @@ function Page7({ honest, updateFormData, nextPage, prevPage }) {
       <div className="glass-effect p-8 md:p-12">
         <div className="mb-10">
           <h1 className="text-3xl md:text-4xl font-bold mb-3" style={{ color: '#FFFFFF', letterSpacing: '-0.02em' }}>
-            If I'm Being Honest...
+            A Confession About Yourself
           </h1>
           <p className="text-base" style={{ color: '#aaa', letterSpacing: '0.01em' }}>
-            Complete this sentence about yourself/2025
+            Share a nice confession about yourself
           </p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-8">
           <div className="animate-slide-up">
             <label className="block text-base font-medium mb-3" style={{ color: '#FFFFFF', letterSpacing: '-0.01em' }}>
-              If I'm being honest...
+              Your confession
             </label>
             <textarea
               value={inputHonest}
               onChange={(e) => setInputHonest(e.target.value)}
-              placeholder="Complete the sentence..."
+              placeholder="Share a nice confession about yourself..."
               rows="6"
               className="input-style w-full px-4 py-3 text-base focus:outline-none resize-none"
               required

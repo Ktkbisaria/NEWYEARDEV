@@ -86,7 +86,7 @@ function Success({ formData, resetForm }) {
             <p className="text-base" style={{ color: '#FFFFFF' }}><span className="font-medium" style={{ color: '#aaa' }}>Avoiding:</span> {formData.avoid}</p>
           )}
           {formData.honest && (
-            <p className="text-base" style={{ color: '#FFFFFF' }}><span className="font-medium" style={{ color: '#aaa' }}>If I'm being honest:</span> {formData.honest}</p>
+            <p className="text-base" style={{ color: '#FFFFFF' }}><span className="font-medium" style={{ color: '#aaa' }}>Confession:</span> {formData.honest}</p>
           )}
         </div>
 

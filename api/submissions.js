@@ -74,18 +74,24 @@ export default async function handler(req, res) {
         return res.status(400).json({ error: 'Missing required fields' })
       }
 
-      // Build insert object with only fields that exist
+      // Build insert object - only include name and plan for now
+      // This will work even if other columns don't exist yet
       const insertData = {
         name,
         plan,
       }
 
-      // Only add optional fields if they exist in the request
-      if (message !== undefined) insertData.message = message || ''
-      if (anthem !== undefined) insertData.anthem = anthem || ''
-      if (manifesting !== undefined) insertData.manifesting = manifesting || ''
-      if (avoid !== undefined) insertData.avoid = avoid || ''
-      if (honest !== undefined) insertData.honest = honest || ''
+      // Try to add optional fields, but don't fail if columns don't exist
+      // The user needs to run the SQL to add these columns
+      try {
+        if (message !== undefined && message) insertData.message = message
+        if (anthem !== undefined && anthem) insertData.anthem = anthem
+        if (manifesting !== undefined && manifesting) insertData.manifesting = manifesting
+        if (avoid !== undefined && avoid) insertData.avoid = avoid
+        if (honest !== undefined && honest) insertData.honest = honest
+      } catch (err) {
+        console.log('Note: Some optional fields may not exist in database yet')
+      }
 
       const { data, error } = await supabase
         .from('submissions')

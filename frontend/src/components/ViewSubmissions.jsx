@@ -205,7 +205,7 @@ function ViewSubmissions() {
                   )}
                   {submission.honest && (
                     <p className="text-base" style={{ color: '#FFFFFF' }}>
-                      <span className="font-medium" style={{ color: '#aaa' }}>If I'm being honest:</span> {submission.honest}
+                      <span className="font-medium" style={{ color: '#aaa' }}>Confession:</span> {submission.honest}
                     </p>
                   )}
                 </div>
