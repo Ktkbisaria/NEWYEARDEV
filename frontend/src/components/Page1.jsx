@@ -18,14 +18,14 @@ function Page1({ name, updateFormData, nextPage }) {
           <h1 className="text-6xl md:text-7xl font-semibold mb-8" style={{ color: '#c9a871', letterSpacing: '-0.03em', fontWeight: 500 }}>
             Happy New Year
           </h1>
-          <h2 className="text-xl md:text-2xl font-light" style={{ color: '#4a5568', letterSpacing: '0.01em' }}>
-            from <span className="font-normal">ktk</span>
+          <h2 className="text-xl md:text-2xl font-light" style={{ color: '#a0a0a0', letterSpacing: '0.01em' }}>
+            from <span className="font-normal" style={{ color: '#f5f5f5' }}>ktk</span>
           </h2>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-8">
           <div className="animate-slide-up">
-            <label className="block text-base font-medium mb-3" style={{ color: '#4a5568', letterSpacing: '-0.01em' }}>
+            <label className="block text-base font-medium mb-3" style={{ color: '#f5f5f5', letterSpacing: '-0.01em' }}>
               What's your name?
             </label>
             <input
