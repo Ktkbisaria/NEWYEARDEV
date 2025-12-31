@@ -105,8 +105,40 @@ export default async function handler(req, res) {
         details: error.details || error.hint || 'Check Vercel function logs for more details'
       })
     }
+  } else if (req.method === 'DELETE') {
+    try {
+      const { id } = req.query
+
+      if (!id) {
+        return res.status(400).json({ error: 'Missing submission ID' })
+      }
+
+      const { error } = await supabase
+        .from('submissions')
+        .delete()
+        .eq('id', id)
+
+      if (error) {
+        console.error('Supabase error deleting:', error)
+        throw error
+      }
+
+      res.status(200).json({ message: 'Submission deleted successfully' })
+    } catch (error) {
+      console.error('Error deleting submission:', error)
+      console.error('Error details:', {
+        message: error.message,
+        code: error.code,
+        details: error.details,
+        hint: error.hint
+      })
+      res.status(500).json({ 
+        error: error.message || 'Failed to delete submission',
+        details: error.details || error.hint || 'Check Vercel function logs for more details'
+      })
+    }
   } else {
-    res.setHeader('Allow', ['GET', 'POST'])
+    res.setHeader('Allow', ['GET', 'POST', 'DELETE'])
     res.status(405).end(`Method ${req.method} Not Allowed`)
   }
 }

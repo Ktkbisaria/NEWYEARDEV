@@ -48,6 +48,21 @@ function ViewSubmissions() {
     }
   }
 
+  const handleDelete = async (id) => {
+    if (!window.confirm('Are you sure you want to delete this submission?')) {
+      return
+    }
+
+    try {
+      await axios.delete(`/api/submissions?id=${id}`)
+      // Remove from local state
+      setSubmissions(submissions.filter(sub => sub.id !== id))
+    } catch (err) {
+      console.error('Error deleting submission:', err)
+      alert('Failed to delete submission. Please try again.')
+    }
+  }
+
   // Password protection screen
   if (!isAuthenticated) {
     return (
@@ -143,13 +158,24 @@ function ViewSubmissions() {
                 className="card-effect rounded-lg p-6 animate-slide-up"
               >
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-                  <div>
-                    <h3 className="text-2xl font-bold text-white mb-2">
-                      {submission.name}
-                    </h3>
-                    <p className="text-gray-500 text-sm">
-                      {new Date(submission.created_at).toLocaleString()}
-                    </p>
+                  <div className="flex-1">
+                    <div className="flex items-start justify-between">
+                      <div>
+                        <h3 className="text-2xl font-bold text-white mb-2">
+                          {submission.name}
+                        </h3>
+                        <p className="text-gray-500 text-sm">
+                          {new Date(submission.created_at).toLocaleString()}
+                        </p>
+                      </div>
+                      <button
+                        onClick={() => handleDelete(submission.id)}
+                        className="ml-4 px-4 py-2 bg-red-500/20 text-red-400 border border-red-500/30 rounded-lg hover:bg-red-500/30 transition-all text-sm font-medium"
+                        title="Delete submission"
+                      >
+                        Delete
+                      </button>
+                    </div>
                   </div>
                   <div className="text-2xl mt-2 md:mt-0 text-white">
                     {'⭐'.repeat(submission.rating)}
