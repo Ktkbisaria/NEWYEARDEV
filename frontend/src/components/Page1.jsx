@@ -13,19 +13,19 @@ function Page1({ name, updateFormData, nextPage }) {
 
   return (
     <div className="animate-fade-in">
-      <div className="glass-effect rounded-2xl p-8 md:p-12">
+      <div className="glass-effect p-8 md:p-12">
         <div className="text-center mb-12">
-          <h1 className="text-6xl md:text-7xl font-semibold mb-8" style={{ color: '#c9a871', letterSpacing: '-0.03em', fontWeight: 500 }}>
+          <h1 className="text-6xl md:text-7xl font-bold mb-6 text-gradient" style={{ letterSpacing: '-0.02em', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}>
             Happy New Year
           </h1>
-          <h2 className="text-xl md:text-2xl font-light" style={{ color: '#a0a0a0', letterSpacing: '0.01em' }}>
-            from <span className="font-normal" style={{ color: '#f5f5f5' }}>ktk</span>
+          <h2 className="text-xl md:text-2xl font-light" style={{ color: '#aaa', letterSpacing: '0.01em' }}>
+            from <span className="font-semibold" style={{ color: '#00c785' }}>ktk</span>
           </h2>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-8">
           <div className="animate-slide-up">
-            <label className="block text-base font-medium mb-3" style={{ color: '#f5f5f5', letterSpacing: '-0.01em' }}>
+            <label className="block text-base font-medium mb-3" style={{ color: '#FFFFFF', letterSpacing: '-0.01em' }}>
               What's your name?
             </label>
             <input
@@ -33,7 +33,7 @@ function Page1({ name, updateFormData, nextPage }) {
               value={inputName}
               onChange={(e) => setInputName(e.target.value)}
               placeholder="Enter your name..."
-              className="input-style w-full px-5 py-4 rounded-lg text-lg focus:outline-none transition-all"
+              className="input-style w-full px-4 py-3 text-base focus:outline-none"
               required
               autoFocus
             />
@@ -41,7 +41,7 @@ function Page1({ name, updateFormData, nextPage }) {
 
           <button
             type="submit"
-            className="button-cta w-full py-4 text-base font-medium"
+            className="button-cta w-full"
           >
             Continue
           </button>

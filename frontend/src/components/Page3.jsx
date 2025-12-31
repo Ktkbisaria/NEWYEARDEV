@@ -15,12 +15,12 @@ function Page3({ rating, updateFormData, nextPage, prevPage }) {
 
   return (
     <div className="animate-fade-in">
-      <div className="glass-effect rounded-2xl p-8 md:p-12">
+      <div className="glass-effect p-8 md:p-12">
         <div className="mb-10">
-          <h1 className="text-3xl md:text-4xl font-semibold mb-3" style={{ color: '#f5f5f5', letterSpacing: '-0.02em', fontWeight: 500 }}>
+          <h1 className="text-3xl md:text-4xl font-bold mb-3" style={{ color: '#FFFFFF', letterSpacing: '-0.02em' }}>
             Rate Your Plan
           </h1>
-          <p className="text-base" style={{ color: '#a0a0a0', letterSpacing: '0.01em' }}>
+          <p className="text-base" style={{ color: '#aaa', letterSpacing: '0.01em' }}>
             How excited are you about your New Year plans?
           </p>
         </div>
@@ -33,19 +33,22 @@ function Page3({ rating, updateFormData, nextPage, prevPage }) {
                   key={star}
                   type="button"
                   onClick={() => setSelectedRating(star)}
-                  className={`text-5xl md:text-6xl transition-all transform hover:scale-110 ${
+                  className={`text-5xl md:text-6xl transition-all duration-300 transform hover:scale-125 ${
                     star <= selectedRating
-                      ? ''
+                      ? 'glow-effect'
                       : 'opacity-30 hover:opacity-50'
                   }`}
-                  style={star <= selectedRating ? { color: '#c9a871' } : { color: '#a0a0a0' }}
+                  style={star <= selectedRating ? { 
+                    color: '#00c785',
+                    filter: 'drop-shadow(0 0 10px rgba(0, 199, 133, 0.5))'
+                  } : { color: '#888' }}
                 >
                   ⭐
                 </button>
               ))}
             </div>
             {selectedRating > 0 && (
-              <p className="text-center text-lg font-medium" style={{ color: '#c9a871', letterSpacing: '-0.01em' }}>
+              <p className="text-center text-lg font-semibold" style={{ color: '#00c785', letterSpacing: '-0.01em', textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)' }}>
                 {selectedRating === 5 && "Amazing"}
                 {selectedRating === 4 && "Great"}
                 {selectedRating === 3 && "Nice"}
@@ -59,14 +62,14 @@ function Page3({ rating, updateFormData, nextPage, prevPage }) {
             <button
               type="button"
               onClick={prevPage}
-              className="button-secondary flex-1 py-3.5 text-base font-medium"
+              className="button-secondary flex-1"
             >
               Back
             </button>
             <button
               type="submit"
               disabled={selectedRating === 0}
-              className="button-primary flex-1 py-3.5 text-base font-medium disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:transform-none"
+              className="button-primary flex-1 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:transform-none"
             >
               Next
             </button>

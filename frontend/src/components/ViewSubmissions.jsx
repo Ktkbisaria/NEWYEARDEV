@@ -67,13 +67,13 @@ function ViewSubmissions() {
   if (!isAuthenticated) {
     return (
       <div className="animate-fade-in">
-        <div className="glass-effect rounded-2xl p-8 md:p-12 max-w-md mx-auto">
+        <div className="glass-effect p-8 md:p-12 max-w-md mx-auto">
           <div className="text-center mb-10">
             <div className="text-5xl mb-6">🔒</div>
-            <h1 className="text-2xl md:text-3xl font-semibold mb-3" style={{ color: '#f5f5f5', letterSpacing: '-0.02em', fontWeight: 500 }}>
+            <h1 className="text-2xl md:text-3xl font-bold mb-3" style={{ color: '#FFFFFF', letterSpacing: '-0.02em' }}>
               Admin Access
             </h1>
-            <p className="text-base" style={{ color: '#a0a0a0', letterSpacing: '0.01em' }}>
+            <p className="text-base" style={{ color: '#aaa', letterSpacing: '0.01em' }}>
               Enter password to view all submissions
             </p>
           </div>
@@ -88,18 +88,18 @@ function ViewSubmissions() {
                   setPasswordError('')
                 }}
                 placeholder="Enter password..."
-                className="input-style w-full px-5 py-4 rounded-lg text-lg focus:outline-none transition-all"
+                className="input-style w-full px-4 py-3 text-base focus:outline-none"
                 autoFocus
                 required
               />
               {passwordError && (
-                <p className="text-sm mt-2" style={{ color: '#a0a0a0' }}>{passwordError}</p>
+                <p className="text-sm mt-2" style={{ color: '#ff6b6b' }}>{passwordError}</p>
               )}
             </div>
 
             <button
               type="submit"
-              className="button-cta w-full py-3.5 text-base font-medium"
+              className="button-cta w-full"
             >
               Unlock
             </button>
@@ -111,21 +111,21 @@ function ViewSubmissions() {
 
   if (loading) {
     return (
-      <div className="glass-effect rounded-2xl p-8 md:p-12 text-center">
+      <div className="glass-effect p-8 md:p-12 text-center">
         <div className="text-5xl mb-6">⏳</div>
-        <h2 className="text-2xl font-semibold" style={{ color: '#f5f5f5', letterSpacing: '-0.01em' }}>Loading submissions...</h2>
+        <h2 className="text-2xl font-bold" style={{ color: '#FFFFFF', letterSpacing: '-0.01em' }}>Loading submissions...</h2>
       </div>
     )
   }
 
   if (error) {
     return (
-      <div className="glass-effect rounded-2xl p-8 md:p-12 text-center">
+      <div className="glass-effect p-8 md:p-12 text-center">
         <div className="text-5xl mb-6">😢</div>
-        <h2 className="text-2xl font-semibold mb-6" style={{ color: '#f5f5f5', letterSpacing: '-0.01em' }}>{error}</h2>
+        <h2 className="text-2xl font-bold mb-6" style={{ color: '#FFFFFF', letterSpacing: '-0.01em' }}>{error}</h2>
         <button
           onClick={fetchSubmissions}
-          className="button-primary px-8 py-3.5 text-base font-medium"
+          className="button-primary"
         >
           Try Again
         </button>
@@ -135,12 +135,12 @@ function ViewSubmissions() {
 
   return (
     <div className="w-full max-w-6xl">
-      <div className="glass-effect rounded-2xl p-8 md:p-12">
+      <div className="glass-effect p-8 md:p-12">
         <div className="mb-10">
-          <h1 className="text-3xl md:text-4xl font-semibold mb-3" style={{ color: '#f5f5f5', letterSpacing: '-0.02em', fontWeight: 500 }}>
+          <h1 className="text-3xl md:text-4xl font-bold mb-3" style={{ color: '#FFFFFF', letterSpacing: '-0.02em' }}>
             All New Year Plans
           </h1>
-          <p className="text-base" style={{ color: '#a0a0a0', letterSpacing: '0.01em' }}>
+          <p className="text-base" style={{ color: '#aaa', letterSpacing: '0.01em' }}>
             {submissions.length} {submissions.length === 1 ? 'submission' : 'submissions'} collected
           </p>
         </div>
@@ -148,50 +148,50 @@ function ViewSubmissions() {
         {submissions.length === 0 ? (
           <div className="text-center py-16">
             <div className="text-5xl mb-6">📭</div>
-            <p className="text-lg" style={{ color: '#a0a0a0' }}>No submissions yet. Be the first one!</p>
+            <p className="text-lg" style={{ color: '#aaa' }}>No submissions yet. Be the first one!</p>
           </div>
         ) : (
           <div className="space-y-4 max-h-[70vh] overflow-y-auto pr-2">
             {submissions.map((submission) => (
               <div
                 key={submission.id}
-                className="card-effect rounded-lg p-6 animate-slide-up"
+                className="card-effect p-6 animate-slide-up"
               >
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-5">
                   <div className="flex-1">
                     <div className="flex items-start justify-between">
                       <div>
-                        <h3 className="text-xl font-semibold mb-1.5" style={{ color: '#f5f5f5', letterSpacing: '-0.01em' }}>
+                        <h3 className="text-xl font-bold mb-1.5" style={{ color: '#FFFFFF', letterSpacing: '-0.01em' }}>
                           {submission.name}
                         </h3>
-                        <p className="text-sm" style={{ color: '#a0a0a0', letterSpacing: '0.01em' }}>
+                        <p className="text-sm" style={{ color: '#aaa', letterSpacing: '0.01em' }}>
                           {new Date(submission.created_at).toLocaleString()}
                         </p>
                       </div>
                       <button
                         onClick={() => handleDelete(submission.id)}
-                        className="ml-4 px-3.5 py-1.5 rounded-lg transition-all text-xs font-medium button-secondary"
+                        className="ml-4 px-3.5 py-1.5 text-xs font-medium button-secondary"
                         title="Delete submission"
                       >
                         Delete
                       </button>
                     </div>
                   </div>
-                  <div className="text-xl mt-2 md:mt-0" style={{ color: '#c9a871' }}>
+                  <div className="text-xl mt-2 md:mt-0" style={{ color: '#00c785' }}>
                     {'⭐'.repeat(submission.rating)}
                   </div>
                 </div>
 
                 <div className="mb-5">
-                  <p className="text-base leading-relaxed" style={{ color: '#f5f5f5' }}>
-                    <span className="font-medium" style={{ color: '#a0a0a0' }}>Plan:</span> {submission.plan}
+                  <p className="text-base leading-relaxed" style={{ color: '#FFFFFF' }}>
+                    <span className="font-medium" style={{ color: '#aaa' }}>Plan:</span> {submission.plan}
                   </p>
                 </div>
 
                 {submission.creative_response && (
-                  <div className="pt-4 border-t" style={{ borderColor: 'rgba(255, 255, 255, 0.1)' }}>
-                    <p className="text-base" style={{ color: '#f5f5f5' }}>
-                      <span className="font-medium" style={{ color: '#a0a0a0' }}>Message:</span> {submission.creative_response}
+                  <div className="pt-4 border-t" style={{ borderColor: 'rgba(255, 255, 255, 0.2)' }}>
+                    <p className="text-base" style={{ color: '#FFFFFF' }}>
+                      <span className="font-medium" style={{ color: '#aaa' }}>Message:</span> {submission.creative_response}
                     </p>
                   </div>
                 )}
@@ -203,7 +203,7 @@ function ViewSubmissions() {
         <div className="mt-10 flex gap-3 justify-center">
           <button
             onClick={fetchSubmissions}
-            className="button-secondary px-6 py-3 text-sm font-medium"
+            className="button-secondary"
           >
             Refresh
           </button>
@@ -212,7 +212,7 @@ function ViewSubmissions() {
               sessionStorage.removeItem('admin_authenticated')
               setIsAuthenticated(false)
             }}
-            className="button-secondary px-6 py-3 text-sm font-medium"
+            className="button-secondary"
           >
             Lock
           </button>

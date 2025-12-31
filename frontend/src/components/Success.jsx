@@ -31,10 +31,10 @@ function Success({ formData, resetForm }) {
   if (isSubmitting) {
     return (
       <div className="animate-fade-in">
-      <div className="glass-effect rounded-2xl p-8 md:p-12 text-center">
+      <div className="glass-effect p-8 md:p-12 text-center">
         <div className="text-5xl mb-6">⏳</div>
-        <h2 className="text-2xl font-semibold mb-2" style={{ color: '#f5f5f5', letterSpacing: '-0.01em' }}>Submitting...</h2>
-        <p style={{ color: '#a0a0a0', fontSize: '15px' }}>Please wait</p>
+        <h2 className="text-2xl font-bold mb-2" style={{ color: '#FFFFFF', letterSpacing: '-0.01em' }}>Submitting...</h2>
+        <p style={{ color: '#aaa', fontSize: '15px' }}>Please wait</p>
       </div>
       </div>
     )
@@ -43,15 +43,15 @@ function Success({ formData, resetForm }) {
   if (submitStatus === 'error') {
     return (
       <div className="animate-fade-in">
-        <div className="glass-effect rounded-2xl p-8 md:p-12 text-center">
+        <div className="glass-effect p-8 md:p-12 text-center">
           <div className="text-5xl mb-6">😢</div>
-          <h2 className="text-2xl font-semibold mb-2" style={{ color: '#f5f5f5', letterSpacing: '-0.01em' }}>Something went wrong</h2>
-          <p className="text-sm mb-8" style={{ color: '#a0a0a0' }}>
+          <h2 className="text-2xl font-bold mb-2" style={{ color: '#FFFFFF', letterSpacing: '-0.01em' }}>Something went wrong</h2>
+          <p className="text-sm mb-8" style={{ color: '#aaa' }}>
             Check browser console (F12) for details
           </p>
           <button
             onClick={resetForm}
-            className="button-primary px-8 py-3.5 text-base font-medium"
+            className="button-primary"
           >
             Try Again
           </button>
@@ -62,26 +62,26 @@ function Success({ formData, resetForm }) {
 
   return (
     <div className="animate-fade-in">
-      <div className="glass-effect rounded-2xl p-8 md:p-12 text-center">
+      <div className="glass-effect p-8 md:p-12 text-center">
         <div className="text-6xl mb-8">🎉</div>
-        <h1 className="text-3xl md:text-4xl font-semibold mb-4" style={{ color: '#f5f5f5', letterSpacing: '-0.02em', fontWeight: 500 }}>
+        <h1 className="text-3xl md:text-4xl font-bold mb-4 text-gradient" style={{ letterSpacing: '-0.02em' }}>
           Thank You, {formData.name}!
         </h1>
-        <p className="text-base mb-10" style={{ color: '#a0a0a0', letterSpacing: '0.01em' }}>
+        <p className="text-base mb-10" style={{ color: '#aaa', letterSpacing: '0.01em' }}>
           Your New Year plans have been saved
         </p>
         
-        <div className="card-effect rounded-xl p-6 mb-8 text-left">
-          <p className="mb-3 text-base" style={{ color: '#f5f5f5' }}><span className="font-medium" style={{ color: '#a0a0a0' }}>Plan:</span> {formData.plan}</p>
-          <p className="mb-3 text-base" style={{ color: '#f5f5f5' }}><span className="font-medium" style={{ color: '#a0a0a0' }}>Rating:</span> <span style={{ color: '#c9a871' }}>{'⭐'.repeat(formData.rating)}</span></p>
+        <div className="card-effect p-6 mb-8 text-left">
+          <p className="mb-3 text-base" style={{ color: '#FFFFFF' }}><span className="font-medium" style={{ color: '#aaa' }}>Plan:</span> {formData.plan}</p>
+          <p className="mb-3 text-base" style={{ color: '#FFFFFF' }}><span className="font-medium" style={{ color: '#aaa' }}>Rating:</span> <span style={{ color: '#00c785' }}>{'⭐'.repeat(formData.rating)}</span></p>
           {formData.creative_response && (
-            <p className="text-base" style={{ color: '#f5f5f5' }}><span className="font-medium" style={{ color: '#a0a0a0' }}>Message:</span> {formData.creative_response}</p>
+            <p className="text-base" style={{ color: '#FFFFFF' }}><span className="font-medium" style={{ color: '#aaa' }}>Message:</span> {formData.creative_response}</p>
           )}
         </div>
 
         <button
           onClick={resetForm}
-          className="button-primary px-8 py-3.5 text-base font-medium"
+          className="button-primary"
         >
           Submit Another Response
         </button>

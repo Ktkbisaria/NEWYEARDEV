@@ -91,7 +91,7 @@ function Navigation() {
     return (
       <Link
         to="/"
-        className="button-primary fixed top-5 left-5 z-50 px-5 py-2.5 text-sm font-medium transition-all"
+        className="button-primary fixed top-5 left-5 z-50 px-4 py-2.5 text-sm font-medium"
       >
         Back to Form
       </Link>
@@ -101,7 +101,7 @@ function Navigation() {
   return (
       <Link
         to="/view"
-        className="button-secondary fixed top-5 right-5 z-50 px-5 py-2.5 text-sm font-medium transition-all"
+        className="button-secondary fixed top-5 right-5 z-50 px-4 py-2.5 text-sm font-medium"
       >
         View All Responses
       </Link>
