@@ -31,7 +31,7 @@ function Success({ formData, resetForm }) {
   if (isSubmitting) {
     return (
       <div className="animate-fade-in">
-        <div className="glass-effect rounded-2xl p-8 md:p-12 shadow-xl text-center">
+        <div className="glass-effect rounded-2xl p-8 md:p-12 text-center">
           <div className="text-6xl mb-4">⏳</div>
           <h2 className="text-3xl font-bold text-white mb-2">Submitting...</h2>
           <p className="text-gray-400">Please wait</p>
@@ -43,7 +43,7 @@ function Success({ formData, resetForm }) {
   if (submitStatus === 'error') {
     return (
       <div className="animate-fade-in">
-        <div className="glass-effect rounded-2xl p-8 md:p-12 shadow-xl text-center">
+        <div className="glass-effect rounded-2xl p-8 md:p-12 text-center">
           <div className="text-6xl mb-4">😢</div>
           <h2 className="text-3xl font-bold text-white mb-2">Something went wrong</h2>
           <p className="text-gray-400 text-sm mb-6">
@@ -62,7 +62,7 @@ function Success({ formData, resetForm }) {
 
   return (
     <div className="animate-fade-in">
-      <div className="glass-effect rounded-2xl p-8 md:p-12 shadow-xl text-center">
+      <div className="glass-effect rounded-2xl p-8 md:p-12 text-center">
         <div className="text-7xl mb-6">🎉</div>
         <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
           Thank You, {formData.name}!
