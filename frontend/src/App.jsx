@@ -66,14 +66,6 @@ function FormFlow() {
           />
         )}
         {currentPage === 3 && (
-          <Page3 
-            message={formData.message}
-            updateFormData={updateFormData}
-            nextPage={nextPage}
-            prevPage={prevPage}
-          />
-        )}
-        {currentPage === 4 && (
           <Page4 
             anthem={formData.anthem}
             updateFormData={updateFormData}
@@ -81,7 +73,7 @@ function FormFlow() {
             prevPage={prevPage}
           />
         )}
-        {currentPage === 5 && (
+        {currentPage === 4 && (
           <Page5 
             manifesting={formData.manifesting}
             updateFormData={updateFormData}
@@ -89,7 +81,7 @@ function FormFlow() {
             prevPage={prevPage}
           />
         )}
-        {currentPage === 6 && (
+        {currentPage === 5 && (
           <Page6 
             avoid={formData.avoid}
             updateFormData={updateFormData}
@@ -97,9 +89,17 @@ function FormFlow() {
             prevPage={prevPage}
           />
         )}
-        {currentPage === 7 && (
+        {currentPage === 6 && (
           <Page7 
             honest={formData.honest}
+            updateFormData={updateFormData}
+            nextPage={nextPage}
+            prevPage={prevPage}
+          />
+        )}
+        {currentPage === 7 && (
+          <Page3 
+            message={formData.message}
             updateFormData={updateFormData}
             nextPage={nextPage}
             prevPage={prevPage}

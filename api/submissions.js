@@ -74,19 +74,22 @@ export default async function handler(req, res) {
         return res.status(400).json({ error: 'Missing required fields' })
       }
 
+      // Build insert object with only fields that exist
+      const insertData = {
+        name,
+        plan,
+      }
+
+      // Only add optional fields if they exist in the request
+      if (message !== undefined) insertData.message = message || ''
+      if (anthem !== undefined) insertData.anthem = anthem || ''
+      if (manifesting !== undefined) insertData.manifesting = manifesting || ''
+      if (avoid !== undefined) insertData.avoid = avoid || ''
+      if (honest !== undefined) insertData.honest = honest || ''
+
       const { data, error } = await supabase
         .from('submissions')
-        .insert([
-          {
-            name,
-            plan,
-            message: message || '',
-            anthem: anthem || '',
-            manifesting: manifesting || '',
-            avoid: avoid || '',
-            honest: honest || '',
-          },
-        ])
+        .insert([insertData])
         .select()
 
       if (error) {

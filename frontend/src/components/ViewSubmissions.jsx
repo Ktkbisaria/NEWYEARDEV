@@ -190,7 +190,7 @@ function ViewSubmissions() {
                   )}
                   {submission.anthem && (
                     <p className="text-base" style={{ color: '#FFFFFF' }}>
-                      <span className="font-medium" style={{ color: '#aaa' }}>2026 Anthem:</span> {submission.anthem}
+                      <span className="font-medium" style={{ color: '#aaa' }}>2025 Anthem:</span> {submission.anthem}
                     </p>
                   )}
                   {submission.manifesting && (

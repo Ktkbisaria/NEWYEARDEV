@@ -77,7 +77,7 @@ function Success({ formData, resetForm }) {
             <p className="text-base" style={{ color: '#FFFFFF' }}><span className="font-medium" style={{ color: '#aaa' }}>Message:</span> {formData.message}</p>
           )}
           {formData.anthem && (
-            <p className="text-base" style={{ color: '#FFFFFF' }}><span className="font-medium" style={{ color: '#aaa' }}>2026 Anthem:</span> {formData.anthem}</p>
+            <p className="text-base" style={{ color: '#FFFFFF' }}><span className="font-medium" style={{ color: '#aaa' }}>2025 Anthem:</span> {formData.anthem}</p>
           )}
           {formData.manifesting && (
             <p className="text-base" style={{ color: '#FFFFFF' }}><span className="font-medium" style={{ color: '#aaa' }}>Manifesting:</span> {formData.manifesting}</p>

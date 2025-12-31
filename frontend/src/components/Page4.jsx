@@ -16,10 +16,10 @@ function Page4({ anthem, updateFormData, nextPage, prevPage }) {
       <div className="glass-effect p-8 md:p-12">
         <div className="mb-10">
           <h1 className="text-3xl md:text-4xl font-bold mb-3" style={{ color: '#FFFFFF', letterSpacing: '-0.02em' }}>
-            Your 2026 Anthem
+            Your 2025 Anthem
           </h1>
           <p className="text-base" style={{ color: '#aaa', letterSpacing: '0.01em' }}>
-            What song is your 2026 anthem?
+            What song is your 2025 anthem?
           </p>
         </div>
 
