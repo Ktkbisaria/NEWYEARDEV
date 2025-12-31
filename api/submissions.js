@@ -15,21 +15,22 @@ export default async function handler(req, res) {
     return
   }
 
-  const supabaseUrl = process.env.SUPABASE_URL
-  const supabaseKey = process.env.SUPABASE_ANON_KEY
+  // Support both naming conventions (SUPABASE_URL and EXPO_PUBLIC_SUPABASE_URL)
+  const supabaseUrl = process.env.SUPABASE_URL || process.env.EXPO_PUBLIC_SUPABASE_URL
+  const supabaseKey = process.env.SUPABASE_ANON_KEY || process.env.EXPO_PUBLIC_SUPABASE_KEY
 
   // Better error messages
   if (!supabaseUrl) {
-    console.error('Missing SUPABASE_URL environment variable')
+    console.error('Missing SUPABASE_URL or EXPO_PUBLIC_SUPABASE_URL environment variable')
     return res.status(500).json({ 
-      error: 'Supabase URL not configured. Please add SUPABASE_URL in Vercel environment variables.' 
+      error: 'Supabase URL not configured. Please add SUPABASE_URL (or EXPO_PUBLIC_SUPABASE_URL) in Vercel environment variables.' 
     })
   }
 
   if (!supabaseKey) {
-    console.error('Missing SUPABASE_ANON_KEY environment variable')
+    console.error('Missing SUPABASE_ANON_KEY or EXPO_PUBLIC_SUPABASE_KEY environment variable')
     return res.status(500).json({ 
-      error: 'Supabase API key not configured. Please add SUPABASE_ANON_KEY in Vercel environment variables.' 
+      error: 'Supabase API key not configured. Please add SUPABASE_ANON_KEY (or EXPO_PUBLIC_SUPABASE_KEY) in Vercel environment variables.' 
     })
   }
 
