@@ -111,7 +111,7 @@ function ViewSubmissions() {
 
   if (loading) {
     return (
-      <div className="glass-effect rounded-2xl p-8 md:p-12 shadow-xl text-center">
+      <div className="glass-effect rounded-2xl p-8 md:p-12 text-center">
         <div className="text-6xl mb-4">⏳</div>
         <h2 className="text-3xl font-bold text-white">Loading submissions...</h2>
       </div>
@@ -120,7 +120,7 @@ function ViewSubmissions() {
 
   if (error) {
     return (
-      <div className="glass-effect rounded-2xl p-8 md:p-12 shadow-xl text-center">
+      <div className="glass-effect rounded-2xl p-8 md:p-12 text-center">
         <div className="text-6xl mb-4">😢</div>
         <h2 className="text-3xl font-bold text-white mb-4">{error}</h2>
         <button
