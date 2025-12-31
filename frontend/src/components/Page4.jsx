@@ -16,18 +16,18 @@ function Page4({ creative_response, updateFormData, nextPage, prevPage }) {
   return (
     <div className="animate-fade-in">
       <div className="glass-effect rounded-2xl p-8 md:p-12">
-        <div className="mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold mb-2" style={{ color: '#d4af7a', letterSpacing: '-0.01em' }}>
+        <div className="mb-10">
+          <h1 className="text-3xl md:text-4xl font-semibold mb-3" style={{ color: '#2d3748', letterSpacing: '-0.02em', fontWeight: 500 }}>
             One More Thing
           </h1>
-          <p className="text-lg" style={{ color: '#374151', opacity: 0.75 }}>
+          <p className="text-base" style={{ color: '#a0a0a0', letterSpacing: '0.01em' }}>
             What's your New Year's wish or message?
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-8">
           <div className="animate-slide-up">
-            <label className="block text-lg font-medium mb-3" style={{ color: '#374151' }}>
+            <label className="block text-base font-medium mb-3" style={{ color: '#2d3748', letterSpacing: '-0.01em' }}>
               Your New Year's wish or message
             </label>
             <textarea
@@ -41,28 +41,28 @@ function Page4({ creative_response, updateFormData, nextPage, prevPage }) {
           </div>
 
           <div className="animate-slide-up">
-            <label className="block text-lg font-medium mb-3" style={{ color: '#374151' }}>
+            <label className="block text-base font-medium mb-3" style={{ color: '#2d3748', letterSpacing: '-0.01em' }}>
               Or pick an emoji
             </label>
-            <div className="grid grid-cols-6 gap-3">
+            <div className="grid grid-cols-6 gap-2.5">
               {emojis.map((emoji) => (
                 <button
                   key={emoji}
                   type="button"
                   onClick={() => setSelectedEmoji(emoji)}
-                  className={`text-3xl p-4 rounded-lg transition-all border ${
+                  className={`text-2xl p-3.5 rounded-lg transition-all border ${
                     selectedEmoji === emoji
                       ? ''
-                      : 'hover:border-opacity-50'
+                      : 'hover:border-opacity-40'
                   }`}
                   style={selectedEmoji === emoji ? { 
-                    background: 'linear-gradient(135deg, #c4a896 0%, #b89a87 100%)',
-                    borderColor: '#c4a896',
-                    boxShadow: '0 4px 12px rgba(196, 168, 150, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
+                    background: '#2d3748',
+                    borderColor: '#2d3748',
+                    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)'
                   } : { 
-                    background: '#f8f9fa',
-                    borderColor: 'rgba(212, 175, 122, 0.2)',
-                    boxShadow: '0 2px 4px rgba(30, 41, 59, 0.08)'
+                    background: '#ffffff',
+                    borderColor: 'rgba(0, 0, 0, 0.08)',
+                    boxShadow: '0 1px 3px rgba(0, 0, 0, 0.06)'
                   }}
                 >
                   {emoji}
@@ -71,17 +71,17 @@ function Page4({ creative_response, updateFormData, nextPage, prevPage }) {
             </div>
           </div>
 
-          <div className="flex gap-4">
+          <div className="flex gap-3">
             <button
               type="button"
               onClick={prevPage}
-              className="button-secondary flex-1 py-4 rounded-lg text-lg font-medium"
+              className="button-secondary flex-1 py-3.5 text-base font-medium"
             >
               Back
             </button>
             <button
               type="submit"
-              className="button-primary flex-1 py-4 rounded-lg text-lg font-semibold"
+              className="button-primary flex-1 py-3.5 text-base font-medium"
             >
               Submit
             </button>

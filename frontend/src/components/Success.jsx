@@ -32,9 +32,9 @@ function Success({ formData, resetForm }) {
     return (
       <div className="animate-fade-in">
       <div className="glass-effect rounded-2xl p-8 md:p-12 text-center">
-        <div className="text-6xl mb-4">⏳</div>
-        <h2 className="text-3xl font-bold mb-2" style={{ color: '#374151' }}>Submitting...</h2>
-        <p style={{ color: '#374151', opacity: 0.7 }}>Please wait</p>
+        <div className="text-5xl mb-6">⏳</div>
+        <h2 className="text-2xl font-semibold mb-2" style={{ color: '#2d3748', letterSpacing: '-0.01em' }}>Submitting...</h2>
+        <p style={{ color: '#a0a0a0', fontSize: '15px' }}>Please wait</p>
       </div>
       </div>
     )
@@ -44,14 +44,14 @@ function Success({ formData, resetForm }) {
     return (
       <div className="animate-fade-in">
         <div className="glass-effect rounded-2xl p-8 md:p-12 text-center">
-          <div className="text-6xl mb-4">😢</div>
-          <h2 className="text-3xl font-bold mb-2" style={{ color: '#374151' }}>Something went wrong</h2>
-          <p className="text-sm mb-6" style={{ color: '#374151', opacity: 0.7 }}>
+          <div className="text-5xl mb-6">😢</div>
+          <h2 className="text-2xl font-semibold mb-2" style={{ color: '#2d3748', letterSpacing: '-0.01em' }}>Something went wrong</h2>
+          <p className="text-sm mb-8" style={{ color: '#a0a0a0' }}>
             Check browser console (F12) for details
           </p>
           <button
             onClick={resetForm}
-            className="button-primary px-8 py-3 rounded-lg text-lg font-semibold"
+            className="button-primary px-8 py-3.5 text-base font-medium"
           >
             Try Again
           </button>
@@ -63,25 +63,25 @@ function Success({ formData, resetForm }) {
   return (
     <div className="animate-fade-in">
       <div className="glass-effect rounded-2xl p-8 md:p-12 text-center">
-        <div className="text-7xl mb-6">🎉</div>
-        <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: '#d4af7a', letterSpacing: '-0.01em' }}>
+        <div className="text-6xl mb-8">🎉</div>
+        <h1 className="text-3xl md:text-4xl font-semibold mb-4" style={{ color: '#2d3748', letterSpacing: '-0.02em', fontWeight: 500 }}>
           Thank You, {formData.name}!
         </h1>
-        <p className="text-xl mb-8" style={{ color: '#374151', opacity: 0.8 }}>
-          Your New Year plans have been saved!
+        <p className="text-base mb-10" style={{ color: '#a0a0a0', letterSpacing: '0.01em' }}>
+          Your New Year plans have been saved
         </p>
         
-        <div className="card-effect rounded-lg p-6 mb-6 text-left">
-          <p className="mb-2" style={{ color: '#374151' }}><span className="font-semibold" style={{ color: '#d4af7a' }}>Plan:</span> {formData.plan}</p>
-          <p className="mb-2" style={{ color: '#374151' }}><span className="font-semibold" style={{ color: '#d4af7a' }}>Rating:</span> <span style={{ color: '#d4af7a' }}>{'⭐'.repeat(formData.rating)}</span></p>
+        <div className="card-effect rounded-xl p-6 mb-8 text-left">
+          <p className="mb-3 text-base" style={{ color: '#2d3748' }}><span className="font-medium" style={{ color: '#2d3748', opacity: 0.6 }}>Plan:</span> <span style={{ color: '#2d3748' }}>{formData.plan}</span></p>
+          <p className="mb-3 text-base" style={{ color: '#2d3748' }}><span className="font-medium" style={{ color: '#2d3748', opacity: 0.6 }}>Rating:</span> <span style={{ color: '#2d3748' }}>{'⭐'.repeat(formData.rating)}</span></p>
           {formData.creative_response && (
-            <p style={{ color: '#374151' }}><span className="font-semibold" style={{ color: '#d4af7a' }}>Message:</span> {formData.creative_response}</p>
+            <p className="text-base" style={{ color: '#2d3748' }}><span className="font-medium" style={{ color: '#2d3748', opacity: 0.6 }}>Message:</span> <span style={{ color: '#2d3748' }}>{formData.creative_response}</span></p>
           )}
         </div>
 
         <button
           onClick={resetForm}
-          className="button-primary px-8 py-4 rounded-lg text-lg font-semibold"
+          className="button-primary px-8 py-3.5 text-base font-medium"
         >
           Submit Another Response
         </button>

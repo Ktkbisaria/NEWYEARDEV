@@ -14,18 +14,18 @@ function Page2({ plan, updateFormData, nextPage, prevPage }) {
   return (
     <div className="animate-fade-in">
       <div className="glass-effect rounded-2xl p-8 md:p-12">
-        <div className="mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold mb-2" style={{ color: '#d4af7a', letterSpacing: '-0.01em' }}>
+        <div className="mb-10">
+          <h1 className="text-3xl md:text-4xl font-semibold mb-3" style={{ color: '#2d3748', letterSpacing: '-0.02em', fontWeight: 500 }}>
             What's Your Plan?
           </h1>
-          <p className="text-lg" style={{ color: '#374151', opacity: 0.75 }}>
+          <p className="text-base" style={{ color: '#a0a0a0', letterSpacing: '0.01em' }}>
             Tell us in detail what you're doing this New Year
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-8">
           <div className="animate-slide-up">
-            <label className="block text-lg font-medium mb-3" style={{ color: '#374151' }}>
+            <label className="block text-base font-medium mb-3" style={{ color: '#2d3748', letterSpacing: '-0.01em' }}>
               Share your New Year plans in detail
             </label>
             <textarea
@@ -39,17 +39,17 @@ function Page2({ plan, updateFormData, nextPage, prevPage }) {
             />
           </div>
 
-          <div className="flex gap-4">
+          <div className="flex gap-3">
             <button
               type="button"
               onClick={prevPage}
-              className="button-secondary flex-1 py-4 rounded-lg text-lg font-medium"
+              className="button-secondary flex-1 py-3.5 text-base font-medium"
             >
               Back
             </button>
             <button
               type="submit"
-              className="button-primary flex-1 py-4 rounded-lg text-lg font-semibold"
+              className="button-primary flex-1 py-3.5 text-base font-medium"
             >
               Next
             </button>

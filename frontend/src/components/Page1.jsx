@@ -14,21 +14,18 @@ function Page1({ name, updateFormData, nextPage }) {
   return (
     <div className="animate-fade-in">
       <div className="glass-effect rounded-2xl p-8 md:p-12">
-        <div className="text-center mb-10">
-          <h1 className="text-6xl md:text-8xl font-bold mb-6">
-            🎉
-          </h1>
-          <h2 className="text-5xl md:text-7xl font-bold mb-3" style={{ color: '#d4af7a', letterSpacing: '-0.02em' }}>
+        <div className="text-center mb-12">
+          <h1 className="text-6xl md:text-7xl font-bold mb-8" style={{ color: '#d4af7a', letterSpacing: '-0.03em', fontWeight: 600 }}>
             Happy New Year
+          </h1>
+          <h2 className="text-xl md:text-2xl font-light" style={{ color: '#a0a0a0', letterSpacing: '0.02em' }}>
+            from <span className="font-normal" style={{ color: '#2d3748' }}>ktk</span>
           </h2>
-          <h3 className="text-2xl md:text-3xl font-light" style={{ color: '#374151' }}>
-            from <span className="font-medium" style={{ color: '#d4af7a' }}>ktk</span>
-          </h3>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-8">
           <div className="animate-slide-up">
-            <label className="block text-lg font-medium mb-3" style={{ color: '#374151' }}>
+            <label className="block text-base font-medium mb-3" style={{ color: '#2d3748', letterSpacing: '-0.01em' }}>
               What's your name?
             </label>
             <input
@@ -44,7 +41,7 @@ function Page1({ name, updateFormData, nextPage }) {
 
           <button
             type="submit"
-            className="button-primary w-full py-4 rounded-lg text-lg font-semibold"
+            className="button-cta w-full py-4 text-base font-medium"
           >
             Continue
           </button>
